@@ -6,7 +6,7 @@ using TMPro;
 
 public class SnowflakeManager : MonoBehaviour
 {
-    private int snowflakes;
+    public static int snowflakes;
     public TextMeshProUGUI snowText;
     public TextMeshProUGUI snowText2; //game over screen
     public TextMeshProUGUI snowText3; //you won screen
@@ -25,7 +25,7 @@ public class SnowflakeManager : MonoBehaviour
       snowText3.text = snowflakes.ToString();
     }
 
-    void changeSnow(int num) //connect this to gameplay later
+    public static void changeSnow(int num) //connect this to gameplay later
     {
       snowflakes += num;
     }

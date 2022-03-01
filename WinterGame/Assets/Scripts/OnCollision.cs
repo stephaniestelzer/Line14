@@ -4,12 +4,14 @@ using UnityEngine;
 
 public class OnCollision : MonoBehaviour
 {
-    void OnCollisionEnter(Collision collision) {
-        Debug.Log("Collision");
-    }
 
     private void OnTriggerEnter(Collider other) {
         Debug.Log("trigger");
+        if(other.CompareTag("Player")){
+            SnowflakeManager.changeSnow(50);
+            Debug.Log("Collected");
+            Destroy(gameObject);
+        }
     }
 }
 
