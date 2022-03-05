@@ -6,7 +6,7 @@ using TMPro;
 
 public class TemperatureManager : MonoBehaviour
 {
-    private int temperature;
+    public static int temperature;
     public TextMeshProUGUI tempText;
     public TextMeshProUGUI tempText2; //game over screen
     public TextMeshProUGUI tempText3; //you won screen
@@ -14,7 +14,7 @@ public class TemperatureManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-      temperature = 15;
+      temperature = 30;
     }
 
     // Update is called once per frame
@@ -25,7 +25,7 @@ public class TemperatureManager : MonoBehaviour
       tempText3.text = temperature + "°C";
     }
 
-    void changeTemp(int num) //connect this to gameplay later
+    public static void changeTemp(int num) //connect this to gameplay later
     {
       temperature += num;
     }

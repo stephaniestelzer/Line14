@@ -28,6 +28,12 @@ public class SnowflakeManager : MonoBehaviour
     public static void changeSnow(int num) //connect this to gameplay later
     {
       snowflakes += num;
+      if(snowflakes == 300){
+        TemperatureManager.changeTemp(-15);
+      }
+      if(snowflakes == 600){
+        TemperatureManager.changeTemp(-15);
+      }
     }
 
     public void ResetSnowflakes()
