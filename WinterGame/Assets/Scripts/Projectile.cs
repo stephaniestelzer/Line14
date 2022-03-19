@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Snowball : MonoBehaviour
+public class Projectile : MonoBehaviour
 {
 
     public float force;

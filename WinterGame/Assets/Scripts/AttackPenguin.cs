@@ -27,4 +27,12 @@ public class AttackPenguin : MonoBehaviour
         }
         
     }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.CompareTag("Player")) {
+            //PlayerStats.Instance.TakeDamage(1);
+            Debug.Log("player takes damage");
+        }
+    }
 }

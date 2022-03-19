@@ -32,6 +32,9 @@ public class EnemyStats : MonoBehaviour
         if (other.gameObject.CompareTag("snowball")) {
             takeDamage(1);
         }
+        if (other.gameObject.CompareTag("icicle")) {
+            takeDamage(2);
+        }
     }
 
 }
