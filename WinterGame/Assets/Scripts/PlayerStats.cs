@@ -57,8 +57,7 @@ public class PlayerStats : MonoBehaviour
           gameWin.SetActive(false);
 
           //reset health
-          while (health < maxHealth)
-            Heal(1);
+          ResetHealth();
 
           menuManager.ToggleGameStatus();
           clock.pause();
@@ -75,6 +74,11 @@ public class PlayerStats : MonoBehaviour
             if (onHealthChangedCallback != null)
                 onHealthChangedCallback.Invoke();
         }*/
+    }
+
+    public void ResetHealth() {
+      while (health < maxHealth)
+        Heal(1);
     }
 
     void ClampHealth()

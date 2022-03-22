@@ -15,6 +15,8 @@ public class Clock : MonoBehaviour
     public PlayerController player;
     public SnowflakeManager snowflakeManager;
     public TemperatureManager temperatureManager;
+    public PlayerStats playerStats;
+    public MenuManager menuManager;
 
     void Start()
     {
@@ -62,9 +64,17 @@ public class Clock : MonoBehaviour
       //reset snowflake count
       snowflakeManager.ResetSnowflakes();
       //reset snowflakes on screen
+      //reset background
+
+      //reset health
+      playerStats.ResetHealth();
 
       //reset temp
       temperatureManager.ResetTemperature();
+      Debug.Log(paused);
+
+      if(menuManager.gameIsOver)
+        menuManager.ToggleGameStatus();
     }
 
     public string GetTime()
