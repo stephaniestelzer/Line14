@@ -5847,7 +5847,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 376, y: 239}
+  m_AnchoredPosition: {x: 376, y: 206.8}
   m_SizeDelta: {x: 439.848, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1775639892
@@ -5870,7 +5870,10 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Attack/Interact With Menus\x03"
+  m_text: 'Left Click: Attack with Snowballs/Interact with Menus
+
+    Right Click:
+    Attack with Icicles'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: f0809977d0ae74daf92f0509b35db5a9, type: 2}
   m_sharedMaterial: {fileID: -3201412674526507650, guid: f0809977d0ae74daf92f0509b35db5a9, type: 2}

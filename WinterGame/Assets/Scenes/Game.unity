@@ -10875,6 +10875,8 @@ MonoBehaviour:
   player: {fileID: 1516351306}
   snowflakeManager: {fileID: 1821108131}
   temperatureManager: {fileID: 862730092}
+  playerStats: {fileID: 993669814}
+  menuManager: {fileID: 1102823846}
 --- !u!114 &1102823842
 MonoBehaviour:
   m_ObjectHideFlags: 0
