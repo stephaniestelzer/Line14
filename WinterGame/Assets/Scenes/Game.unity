@@ -10249,9 +10249,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 88085378c2d694c108caec1da15bd7a9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gameOver: {fileID: 0}
-  gameWin: {fileID: 0}
-  gameLoss: {fileID: 0}
+  gameOver: {fileID: 16659699}
+  gameWin: {fileID: 334647875}
+  gameLoss: {fileID: 671234825}
   menuManager: {fileID: 1102823846}
   clock: {fileID: 1102823841}
   health: 10
