@@ -57,7 +57,7 @@ public class PlayerStats : MonoBehaviour
           gameWin.SetActive(false);
 
           //reset health
-          while (health <= maxHealth)
+          while (health < maxHealth)
             Heal(1);
 
           menuManager.ToggleGameStatus();
