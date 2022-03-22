@@ -10,11 +10,14 @@ public class SnowflakeManager : MonoBehaviour
     public TextMeshProUGUI snowText;
     public TextMeshProUGUI snowText2; //game over screen
     public TextMeshProUGUI snowText3; //you won screen
+    public TextMeshProUGUI iciclesText;
+    public static int icicles;
 
     // Start is called before the first frame update
     void Start()
     {
       snowflakes = 0;
+      icicles = 0;
     }
 
     // Update is called once per frame
@@ -23,6 +26,7 @@ public class SnowflakeManager : MonoBehaviour
       snowText.text = "Snowflakes: " + snowflakes ;
       snowText2.text = snowflakes.ToString();
       snowText3.text = snowflakes.ToString();
+      iciclesText.text = "Icicles: " + icicles;
     }
 
     public static void changeSnow(int num) //connect this to gameplay later
@@ -39,5 +43,6 @@ public class SnowflakeManager : MonoBehaviour
     public void ResetSnowflakes()
     {
       snowflakes = 0;
+      icicles = 0;
     }
 }
