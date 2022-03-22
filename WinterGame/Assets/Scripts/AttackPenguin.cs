@@ -7,6 +7,7 @@ public class AttackPenguin : MonoBehaviour
 
     public float chaseSpeed;
     public float attackRadius;
+    private bool canCollide = true;
 
     // Start is called before the first frame update
     void Start()
@@ -30,8 +31,16 @@ public class AttackPenguin : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.CompareTag("Player")) {
+        if (canCollide && other.gameObject.CompareTag("Player")) {
             PlayerStats.Instance.TakeDamage(1);
+            canCollide = false;
+        }
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.gameObject.CompareTag("Player")) {
+            canCollide = true;
         }
     }
 }
