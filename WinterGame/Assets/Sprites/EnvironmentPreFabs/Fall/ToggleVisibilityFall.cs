@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ToggleVisibilityWinter : MonoBehaviour
+public class ToggleVisibilityFall : MonoBehaviour
 {
      public Renderer rend;
     void Start()

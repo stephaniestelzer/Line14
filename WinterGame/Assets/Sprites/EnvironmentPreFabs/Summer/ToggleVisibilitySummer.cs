@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ToggleVisibility : MonoBehaviour
+public class ToggleVisibilitySummer : MonoBehaviour
 {
     // Start is called before the first frame update
     public Renderer rend;
