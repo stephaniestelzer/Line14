@@ -17,8 +17,10 @@ public class OnCollision : MonoBehaviour
             // Give player a new icicle (code added by Natalie)
             if (SnowflakeManager.snowflakes % (numSnowflakesPerPowerup * 3) == 0) { // Every 3 snowflakes collected
                 Inventory.numIcicles++;
+
+                //Update the UI (added by Andrea)
+                SnowflakeManager.AddIcicle();
             }
         }
     }
 }
-

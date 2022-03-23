@@ -40,6 +40,11 @@ public class SnowflakeManager : MonoBehaviour
       }
     }
 
+    public static void AddIcicle()
+    {
+      icicles++;
+    }
+
     public void ResetSnowflakes()
     {
       snowflakes = 0;
