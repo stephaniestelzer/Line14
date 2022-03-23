@@ -11,6 +11,9 @@ public class Clock : MonoBehaviour
     public TextMeshProUGUI textClock2;
     public TextMeshProUGUI textClock3;
     private float val;
+    private float pausedVal;
+    private float timeInit;
+    private float timeFinal;
     public bool paused = false;
     public PlayerController player;
     public SnowflakeManager snowflakeManager;
@@ -24,6 +27,9 @@ public class Clock : MonoBehaviour
       textClock2.text = "00:00";
       textClock3.text = "00:00";
       val = Time.time;
+      pausedVal = 0.0f;
+      timeInit = 0.0f;
+      timeFinal = 0.0f;
     }
 
     // Update is called once per frame
@@ -33,7 +39,7 @@ public class Clock : MonoBehaviour
         pause();
       if (!paused)
       {
-        float elapsedTime = Time.time - val;
+        float elapsedTime = Time.time - val - pausedVal;
         int min = Mathf.FloorToInt(elapsedTime/60);
         int sec = Mathf.FloorToInt(elapsedTime%60);
         string minute = LeadingZero(min);
@@ -52,12 +58,29 @@ public class Clock : MonoBehaviour
     public void pause()
     {
       paused = !paused;
+      if (!paused)
+      {
+        Debug.Log("unpaused");
+        timeFinal = Time.time;
+        pausedVal += (timeFinal - timeInit);
+        timeFinal = 0.0f;
+        timeInit = 0.0f;
+      }
+      else
+      {
+        Debug.Log("paused");
+        timeInit = Time.time;
+      }
     }
 
     public void reset()
     {
+      //reset clock
       val = Time.time;
-      //need to reset player, snowflakes (make them reappear, reset count to 0) and temp (reset to 0)
+      pausedVal = 0.0f;
+      timeInit = Time.time;
+      timeFinal = timeInit;
+      //need to reset player, snowflakes (make them reappear, reset count to 0) and temp (reset to 0)/background
       //reset PlayerController
       player.ResetPosition();
 
