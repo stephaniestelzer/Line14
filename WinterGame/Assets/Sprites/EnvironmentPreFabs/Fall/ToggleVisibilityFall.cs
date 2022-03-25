@@ -8,14 +8,14 @@ public class ToggleVisibilityFall : MonoBehaviour
     void Start()
     {
         rend = GetComponent<Renderer>();
-        rend.enabled = false;
+        rend.enabled = true;
     }
 
     // Update is called once per frame
     void Update()
     {
         if(TemperatureManager.temperature == 15){
-            rend.enabled = true;
+            rend.enabled = false;
         }
     }
 }
