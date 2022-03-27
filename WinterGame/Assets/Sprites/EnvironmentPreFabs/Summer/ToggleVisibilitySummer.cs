@@ -14,7 +14,7 @@ public class ToggleVisibilitySummer : MonoBehaviour
 
     // Update is called once per frame
     void Update()
-    {
+    {   
         if(TemperatureManager.temperature == 15){
             rend.enabled = false;
         }
