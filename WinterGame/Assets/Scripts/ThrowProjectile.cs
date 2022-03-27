@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class ThrowProjectile : MonoBehaviour
 {
@@ -24,6 +25,7 @@ public class ThrowProjectile : MonoBehaviour
             Instantiate(icicleToSpawn, spawnlocation, Quaternion.identity);
             // Decrease icicle inventory
             Inventory.numIcicles--;
+            SnowflakeManager.RemoveIcicle();
         }
     }
 }
