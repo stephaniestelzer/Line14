@@ -53,6 +53,7 @@ public class PlayerController : MonoBehaviour
     {
       controller.enabled = false;
       transform.position = startPosition;
+      OutOfBounds.Reset();
       controller.enabled = true;
     }
 }
