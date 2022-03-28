@@ -9,48 +9,80 @@ public class OutOfBounds : MonoBehaviour
     public CharacterController controller; //both of these defined in the inspector
 
 
-    //int checkpoint;
+    private static int checkpoint;
     private static Vector3 lastCheckP;
     void Start()
     {
-        //checkpoint = 0;
+        checkpoint = 0;
         controller = player.GetComponent<CharacterController>();
         lastCheckP = new Vector3(0f,10f,-12f); //spawn
     }
 
     public static void Reset(){
+        checkpoint = 0;
         lastCheckP = new Vector3(0f,10f,-12f); //spawn
     }
     
     void Update()
     {
-        //this seems wasteful to me, but for animations later might be needed
-    // if(player.transform.position.z > 205f){
-    //     //light the igloo up!
-        
-    // }else if(player.transform.position.z > 205f){
-
-    // }
+        //cannot progress backwards
+        if(checkpoint < 4 && player.transform.position.z > 692){
+            lastCheckP = new Vector3(0f,9f,692f);
+            checkpoint = 4;
+        }else if(checkpoint < 3 &&player.transform.position.z > 578f){
+            lastCheckP = new Vector3(0f,20f, 578f);
+            checkpoint = 3;
+        }else if(checkpoint < 2 && player.transform.position.z > 365f){
+            lastCheckP = new Vector3(0f,13.4f, 365f);
+            checkpoint = 2;
+        }else if(checkpoint < 1 && player.transform.position.z > 204.3){
+            lastCheckP = new Vector3(0f,11f, 204.3f);
+            checkpoint = 1;
+        }
 
 
     if(player.transform.position.y < -15f){
         //checks which checkpoint you passed
-        if(player.transform.position.z > 692){
-            lastCheckP = new Vector3(0f,9f,692f);
-        }else if(player.transform.position.z > 578f){
-            lastCheckP = new Vector3(0f,20f, 578f);
-        }else if(player.transform.position.z > 365f){
-            lastCheckP = new Vector3(0f,13.4f, 578f);
-        }else if(player.transform.position.z > 204.3){
-            lastCheckP = new Vector3(0f,11f, 578f);
-        }
+        // if(checkpoint < 4 && player.transform.position.z > 692){
+        //     lastCheckP = new Vector3(0f,9f,692f);
+        //     checkpoint = 4;
+        // }else if(checkpoint < 3 &&player.transform.position.z > 578f){
+        //     lastCheckP = new Vector3(0f,20f, 578f);
+        //     checkpoint = 3;
+        // }else if(checkpoint < 2 && player.transform.position.z > 365f){
+        //     lastCheckP = new Vector3(0f,13.4f, 365f);
+        //     checkpoint = 2;
+        // }else if(checkpoint < 1 && player.transform.position.z > 204.3){
+        //     lastCheckP = new Vector3(0f,11f, 204.3f);
+        //     checkpoint = 1;
+        // }
+
+
         ToLastCheckPoint();
     }
     }
 
     void ToLastCheckPoint(){
                 //Debug.Log("i fell!!!");
-                //player.GetComponent<Rigidbody>().velocity = new Vector3(0f,0f,0f);
+            switch(checkpoint){
+                case 0 :
+                    lastCheckP = new Vector3(0f,10f,-12f); //spawn
+                break;
+                case 1:
+                    lastCheckP = new Vector3(0f,11f, 204.3f);
+                break;
+                case 2 :
+                    lastCheckP = new Vector3(0f,13.4f, 365f);
+                break;
+                case 3:
+                    lastCheckP = new Vector3(0f,20f, 578f);
+                break;
+                case 4 :
+                    lastCheckP = new Vector3(0f,9f,692f);
+                break;
+            }
+
+
                 controller.enabled = false;
                 player.transform.position = lastCheckP;
                 PlayerStats.Instance.TakeDamage(1);
