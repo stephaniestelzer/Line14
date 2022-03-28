@@ -28,12 +28,12 @@ class SlimeOneController : SlimeBase
 
 
         //inital sets
-        active = true;
+        active = false;
         timing = 3;
         timeManager = timing;
         doingAction = true;
         tracking = false;
-        //rb.useGravity = false;
+        rb.useGravity = false;
     }
 
     private void onWakeArea(){

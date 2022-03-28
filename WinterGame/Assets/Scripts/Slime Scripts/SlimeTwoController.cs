@@ -6,10 +6,11 @@ class SlimeTwoController : SlimeBase
 {
 
     //public GameObject project;
-
+        //public string namer;
     // Start is called before the first frame update
     void Start()
     {
+
         //definitions
         self = this.gameObject;
         force = new Vector3(0, jumpForce / 1.3f, 0);
@@ -21,7 +22,7 @@ class SlimeTwoController : SlimeBase
 
 
         //events
-        GEvents.current.onDamageTick += onDamageTick;
+        //GEvents.current.onDamageTick += onDamageTick;
 
         //init states
         timing = RandU.RandOne(2);
@@ -43,7 +44,7 @@ class SlimeTwoController : SlimeBase
         //float scale = (maxScale - selfHealth) / maxScale + 0.5f;
        // self.transform.localScale = new Vector3(scale, scale,scale);
         timing = RandU.RandOne(2) + ((RandU.RandOne(8))/10f);
-        if(selfHealth < deathHealth){ //define in subclass
+        if(selfHealth < deathHealth){ 
             Perish();
             Destroy(self);
             //active = false;
@@ -90,9 +91,6 @@ class SlimeTwoController : SlimeBase
 
     }
 
-    private void onDamageTick(){
-        selfHealth -= 1;
-    }
 
     public override void Perish()
     {

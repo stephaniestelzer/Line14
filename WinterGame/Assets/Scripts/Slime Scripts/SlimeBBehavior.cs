@@ -45,4 +45,11 @@ public class SlimeBBehavior : MonoBehaviour
       }
     }
 
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.CompareTag("snowball")) {
+            Destroy(gameObject);
+        }
+    }
+
 }

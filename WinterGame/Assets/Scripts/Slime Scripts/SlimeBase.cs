@@ -123,7 +123,7 @@ public class SlimeBase : MonoBehaviour
   private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.CompareTag("snowball")) {
-            GEvents.current.DamageTick();
+            selfHealth -= 1; //hardcoded
         }
     }
 

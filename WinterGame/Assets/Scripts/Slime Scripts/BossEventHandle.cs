@@ -70,8 +70,10 @@ public class BossEventHandle : MonoBehaviour
 
     //Events
     private void onDeathOne(){
-        Instantiate(slime2,position, Quaternion.identity);
-        Instantiate(slime2,position, Quaternion.identity);
+       // GameObject slime0 = (GameObject)Instantiate(slime2,position, Quaternion.identity);
+       // GameObject slime32 = (GameObject)Instantiate(slime2,position, Quaternion.identity);
+       Instantiate(slime2,position, Quaternion.identity);
+       Instantiate(slime2,position, Quaternion.identity);
     }
 
     private void onDeathTwo(){

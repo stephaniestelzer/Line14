@@ -25,7 +25,7 @@ public class GlobProjectile : MonoBehaviour
         once = true;
         timeManager = 3;
         rb = GetComponent<Rigidbody>();
-        target = GameObject.Find("penguin");
+        target = GameObject.Find("Player");
         hit = target;
         initForce = target.transform.position - transform.position;
 
@@ -85,6 +85,13 @@ public class GlobProjectile : MonoBehaviour
         //first time colliding with something
        
 
+    }
+
+      private void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.CompareTag("snowball")) {
+            Destroy(gameObject);
+        }
     }
 
   void ActionHandle()
