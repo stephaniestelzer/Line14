@@ -11,7 +11,7 @@ public class ShadowController : MonoBehaviour
     void Start()
     {
         self = this.gameObject;
-        //GEvents.current.onDeathOne += onDeathOne;
+        GEvents.current.onDeathOne += onDeathOne;
         showShadow = false;
         self.SetActive(false);
         slime = GameObject.Find("Slime1");

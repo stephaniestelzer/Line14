@@ -49,7 +49,7 @@ public class SlimeBasic : SlimeBase
 
      public void ScaleSelfM(){
          timing = ((RandU.RandOne(9)/10f) + 0.2f);
-         if(selfHealth < 0){
+         if(selfHealth <= 0){
              Destroy(self);
          }
 
