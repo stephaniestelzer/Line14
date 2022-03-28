@@ -14,7 +14,7 @@ public class SlimeBasic : SlimeBase
         self = this.gameObject;
         force = new Vector3(0, jumpForce, 0);
         selfHealth = 5;
-
+        player = GameObject.Find("Player");
         rb = this.GetComponent<Rigidbody>();
         healthBar = gameObject.GetComponent<ENPCHealthBar>();
         //events
@@ -23,7 +23,7 @@ public class SlimeBasic : SlimeBase
         //init sets
         timing = 2;
         timeManager = timing;
-        active = true;
+        active = false;
         doingAction = false;
         rb.useGravity = false;
     }
@@ -33,7 +33,7 @@ public class SlimeBasic : SlimeBase
     {
         healthBar.Value = (int)selfHealth;
         if(!active){
-            if(Mathf.Abs(transform.position.z - player.transform.position.z) <= 60){
+            if(Mathf.Abs(transform.position.z - player.transform.position.z) <= 30){
                 rb.useGravity = true;
                 active = true;
             }
@@ -56,7 +56,7 @@ public class SlimeBasic : SlimeBase
 
        public override void RandomAction()
     {
-        Debug.Log("action");
+        //Debug.Log("action");
         doingAction = true;
         StartHop();
     }

@@ -37192,6 +37192,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1711906850}
     m_Modifications:
+    - target: {fileID: -6277194271335901459, guid: d937eb5f835c1374392fd154c2e0bf41, type: 3}
+      propertyPath: m_Mass
+      value: 30
+      objectReference: {fileID: 0}
     - target: {fileID: -4043103054942533729, guid: d937eb5f835c1374392fd154c2e0bf41, type: 3}
       propertyPath: penguin
       value: 
