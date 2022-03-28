@@ -14,7 +14,7 @@ public class MovingPlatform : MonoBehaviour
     {
         if(poppi.transform.position.z > (GetComponent<BoxCollider>().bounds.max.z + 30))//30 is arbritary
         {
-            Debug.Log("YERRRR");
+            //Debug.Log("YERRRR");
         }
             
 

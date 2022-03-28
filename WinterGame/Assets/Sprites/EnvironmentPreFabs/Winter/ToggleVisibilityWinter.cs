@@ -9,7 +9,7 @@ public class ToggleVisibilityWinter : MonoBehaviour
     void Start()
     {
         rend = GetComponent<Renderer>();
-        rend.enabled = false;
+        //rend.enabled = false;
     }
 
     // Update is called once per frame
