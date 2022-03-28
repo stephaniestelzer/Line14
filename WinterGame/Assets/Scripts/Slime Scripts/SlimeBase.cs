@@ -15,6 +15,8 @@ public class SlimeBase : MonoBehaviour
     public float deathHealth;
     public float maxScale;
     public float selfHealth;
+    public bool canCollide;
+
 
     //bodies
     public GameObject self;
@@ -67,6 +69,7 @@ public class SlimeBase : MonoBehaviour
         {
             timeManager = timing;
             RandomAction();
+            canCollide = true;
         }
     }
 
@@ -118,6 +121,10 @@ public class SlimeBase : MonoBehaviour
         if(target.gameObject.tag.Equals("environment") || target.gameObject.tag.Equals("Player") || target.gameObject.tag.Equals("Slime")){
             doingAction = false;
         }
+        if (canCollide && target.gameObject.CompareTag("Player")) {
+            PlayerStats.Instance.TakeDamage(1);
+            canCollide = false;
+        }
     }
 
   private void OnTriggerEnter(Collider other)
@@ -125,7 +132,9 @@ public class SlimeBase : MonoBehaviour
         if (other.gameObject.CompareTag("snowball")) {
             selfHealth -= 1; //hardcoded
         }
+
     }
+
 
     public virtual void Perish(){
         //subclasses call their version of current.Death#

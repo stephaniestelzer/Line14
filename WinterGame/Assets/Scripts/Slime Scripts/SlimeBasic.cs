@@ -26,6 +26,7 @@ public class SlimeBasic : SlimeBase
         active = false;
         doingAction = false;
         rb.useGravity = false;
+        canCollide = true;
     }
 
     

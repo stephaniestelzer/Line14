@@ -29,6 +29,7 @@ class SlimeTwoController : SlimeBase
         active = true;
         doingAction = false;
         timeManager = timing;
+        canCollide = true;
     }
 
     // Update is called once per frame

@@ -34,6 +34,7 @@ class SlimeOneController : SlimeBase
         doingAction = true;
         tracking = false;
         rb.useGravity = false;
+        canCollide = true;
     }
 
     private void onWakeArea(){
@@ -115,7 +116,10 @@ class SlimeOneController : SlimeBase
             tracking = false;
             shadow.SetActive(false);
         }
-
+        if (canCollide && target.gameObject.CompareTag("Player")) {
+            PlayerStats.Instance.TakeDamage(1);
+            canCollide = false;
+        }
      }
 
   private void OnTriggerEnter(Collider other)

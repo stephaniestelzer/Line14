@@ -23,7 +23,7 @@ public class SlimeThreeController : SlimeBase
         timeManager = timing;
         active = true;
         doingAction = false;
-
+        canCollide = true;
     }
 
     

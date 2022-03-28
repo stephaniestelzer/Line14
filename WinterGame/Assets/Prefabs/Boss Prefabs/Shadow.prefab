@@ -108,4 +108,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f8fb000fd9a815d42ba5d0305c539adc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  slime: {fileID: 0}
+  slime: {fileID: 5619708303266259088, guid: b58418d27e3391c48a06684d0fbef861, type: 3}
