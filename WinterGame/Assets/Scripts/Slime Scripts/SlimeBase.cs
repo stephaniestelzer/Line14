@@ -132,6 +132,9 @@ public class SlimeBase : MonoBehaviour
         if (other.gameObject.CompareTag("snowball")) {
             selfHealth -= 1; //hardcoded
         }
+        if (other.gameObject.CompareTag("icicle")) {
+            selfHealth -= 2; //hardcoded
+        }
 
     }
 
