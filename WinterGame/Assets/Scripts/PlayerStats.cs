@@ -62,6 +62,9 @@ public class PlayerStats : MonoBehaviour
           menuManager.ToggleGameStatus();
           clock.pause();
         }
+
+        // Shake camera effect (added by Natalie)
+        Camera.main.GetComponent<CameraFollow>().setShaking();
     }
 
     public void AddHealth()
