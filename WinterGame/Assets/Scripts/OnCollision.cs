@@ -6,15 +6,16 @@ public class OnCollision : MonoBehaviour
 {
 
     public int numSnowflakesPerPowerup;
+    public AudioSource source;
 
     private void OnTriggerEnter(Collider other) {
-        Debug.Log("trigger");
         if(other.CompareTag("Player")){
             SnowflakeManager.changeSnow(numSnowflakesPerPowerup);
-            Debug.Log("Collected");
+            Debug.Log("play audio");
+            source.PlayOneShot(source.clip);
             Destroy(gameObject);
 
-            // Give player a new icicle (code added by Natalie)
+            // Give player a new icicle (added by Natalie)
             if (SnowflakeManager.snowflakes % (numSnowflakesPerPowerup * 3) == 0) { // Every 3 snowflakes collected
                 Inventory.numIcicles++;
 
