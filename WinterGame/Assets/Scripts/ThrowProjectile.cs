@@ -8,6 +8,9 @@ public class ThrowProjectile : MonoBehaviour
     public GameObject snowballToSpawn;
     public GameObject icicleToSpawn;
     public float penguinThrowHeight; // Based on height of model
+    public AudioSource source;
+    public AudioClip snowballSound;
+    public AudioClip icicleSound;
 
     // Update is called once per frame
     void Update()
@@ -16,11 +19,15 @@ public class ThrowProjectile : MonoBehaviour
         spawnlocation.y += penguinThrowHeight;
 
         if (Input.GetMouseButtonDown(0)) { // Left mouse button pressed during frame
+            // Play sound
+            source.PlayOneShot(snowballSound);
             // Create snowball
             Instantiate(snowballToSpawn, spawnlocation, Quaternion.identity);
         }
 
         if (Input.GetMouseButtonDown(1) && Inventory.numIcicles > 0) { // Right mouse button pressed during frame
+            // Play sound
+            source.PlayOneShot(icicleSound);
             // Create icicle
             Instantiate(icicleToSpawn, spawnlocation, Quaternion.identity);
             // Decrease icicle inventory
