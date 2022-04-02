@@ -50,21 +50,25 @@ public class PlayerStats : MonoBehaviour
         health -= dmg;
         ClampHealth();
 
-        if (health == 0) { //game over
+        if (health == 0)
+        { //game over
           //proper screens
-          gameOver.SetActive(true);
-          gameLoss.SetActive(true);
-          gameWin.SetActive(false);
+            gameOver.SetActive(true);
+            gameLoss.SetActive(true);
+            gameWin.SetActive(false);
 
-          //reset health
-          ResetHealth();
+            //reset health
+            ResetHealth();
 
-          menuManager.ToggleGameStatus();
-          clock.pause();
+            menuManager.ToggleGameStatus();
+            clock.pause();
         }
-
-        // Shake camera effect (added by Natalie)
-        Camera.main.GetComponent<CameraFollow>().setShaking();
+        else {
+            Debug.Log(health);
+            // Shake camera effect (added by Natalie)
+            Camera.main.GetComponent<CameraFollow>().setShaking();
+        }
+        
     }
 
     public void AddHealth()
