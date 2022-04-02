@@ -30,6 +30,9 @@ public class SlimeBase : MonoBehaviour
     public Vector3 force;
     public float timing;
 
+    // Sound
+    public AudioSource source;
+
     
     // void Start()
     // {
@@ -131,9 +134,11 @@ public class SlimeBase : MonoBehaviour
     {
         if (other.gameObject.CompareTag("snowball")) {
             selfHealth -= 1; //hardcoded
+            source.PlayOneShot(source.clip);
         }
         if (other.gameObject.CompareTag("icicle")) {
             selfHealth -= 2; //hardcoded
+            source.PlayOneShot(source.clip);
         }
 
     }

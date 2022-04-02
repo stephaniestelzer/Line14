@@ -14,6 +14,7 @@ public class PlayerStats : MonoBehaviour
     public GameObject gameLoss;
     public MenuManager menuManager;
     public Clock clock;
+    public AudioSource source;
 
     #region Sigleton
     private static PlayerStats instance;
@@ -64,9 +65,9 @@ public class PlayerStats : MonoBehaviour
             clock.pause();
         }
         else if (shakeCamera) {
-            Debug.Log(health);
             // Shake camera effect (added by Natalie)
             Camera.main.GetComponent<CameraFollow>().setShaking();
+            source.PlayOneShot(source.clip);
         }
         
     }
