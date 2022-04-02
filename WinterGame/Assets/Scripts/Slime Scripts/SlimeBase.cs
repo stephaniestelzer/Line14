@@ -122,7 +122,7 @@ public class SlimeBase : MonoBehaviour
             doingAction = false;
         }
         if (canCollide && target.gameObject.CompareTag("Player")) {
-            PlayerStats.Instance.TakeDamage(1);
+            PlayerStats.Instance.TakeDamage(1, true);
             canCollide = false;
         }
     }

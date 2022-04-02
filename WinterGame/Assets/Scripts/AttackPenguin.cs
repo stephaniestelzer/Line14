@@ -32,7 +32,7 @@ public class AttackPenguin : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
         if (canCollide && other.gameObject.CompareTag("Player")) {
-            PlayerStats.Instance.TakeDamage(1);
+            PlayerStats.Instance.TakeDamage(1, true);
             canCollide = false;
         }
     }

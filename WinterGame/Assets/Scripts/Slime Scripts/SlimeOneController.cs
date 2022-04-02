@@ -117,7 +117,7 @@ class SlimeOneController : SlimeBase
             shadow.SetActive(false);
         }
         if (canCollide && target.gameObject.CompareTag("Player")) {
-            PlayerStats.Instance.TakeDamage(1);
+            PlayerStats.Instance.TakeDamage(1, true);
             canCollide = false;
         }
      }

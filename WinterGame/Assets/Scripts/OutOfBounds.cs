@@ -41,7 +41,7 @@ public class OutOfBounds : MonoBehaviour
         }
 
 
-    if(player.transform.position.y < -15f){
+    if(player.transform.position.y < -5f){
         //checks which checkpoint you passed
         // if(checkpoint < 4 && player.transform.position.z > 692){
         //     lastCheckP = new Vector3(0f,9f,692f);
@@ -85,7 +85,7 @@ public class OutOfBounds : MonoBehaviour
 
                 controller.enabled = false;
                 player.transform.position = lastCheckP;
-                PlayerStats.Instance.TakeDamage(1);
+                PlayerStats.Instance.TakeDamage(1, false);
                 controller.enabled = true;
     }
 

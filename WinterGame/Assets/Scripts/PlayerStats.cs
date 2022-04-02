@@ -45,7 +45,7 @@ public class PlayerStats : MonoBehaviour
         ClampHealth();
     }
 
-    public void TakeDamage(float dmg)
+    public void TakeDamage(float dmg, bool shakeCamera)
     {
         health -= dmg;
         ClampHealth();
@@ -63,7 +63,7 @@ public class PlayerStats : MonoBehaviour
             menuManager.ToggleGameStatus();
             clock.pause();
         }
-        else {
+        else if (shakeCamera) {
             Debug.Log(health);
             // Shake camera effect (added by Natalie)
             Camera.main.GetComponent<CameraFollow>().setShaking();
