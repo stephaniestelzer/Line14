@@ -12,12 +12,14 @@ public class SnowflakeManager : MonoBehaviour
     public TextMeshProUGUI snowText3; //you won screen
     public TextMeshProUGUI iciclesText;
     public static int icicles;
+    public static AudioSource source;
 
     // Start is called before the first frame update
     void Start()
     {
       snowflakes = 0;
       icicles = 0;
+        source = gameObject.GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -27,6 +29,10 @@ public class SnowflakeManager : MonoBehaviour
       snowText2.text = snowflakes.ToString();
       snowText3.text = snowflakes.ToString();
       iciclesText.text = "Icicles: " + icicles;
+    }
+
+    public static void playPickupSound() {
+        source.PlayOneShot(source.clip);
     }
 
     public static void changeSnow(int num) //connect this to gameplay later

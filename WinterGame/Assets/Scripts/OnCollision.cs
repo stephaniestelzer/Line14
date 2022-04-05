@@ -6,13 +6,11 @@ public class OnCollision : MonoBehaviour
 {
 
     public int numSnowflakesPerPowerup;
-    public AudioSource source;
 
     private void OnTriggerEnter(Collider other) {
         if(other.CompareTag("Player")){
             SnowflakeManager.changeSnow(numSnowflakesPerPowerup);
-            Debug.Log("play audio");
-            source.PlayOneShot(source.clip);
+            SnowflakeManager.playPickupSound();
             Destroy(gameObject);
 
             // Give player a new icicle (added by Natalie)
