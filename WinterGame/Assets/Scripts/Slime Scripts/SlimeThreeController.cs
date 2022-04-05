@@ -11,7 +11,7 @@ public class SlimeThreeController : SlimeBase
         //definitions
         self = this.gameObject;
         force = new Vector3(0, jumpForce, 0);
-        selfHealth = 30;
+        selfHealth = 3;
 
         rb = this.GetComponent<Rigidbody>();
         

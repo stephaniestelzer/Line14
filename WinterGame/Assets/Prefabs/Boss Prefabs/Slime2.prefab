@@ -116,6 +116,7 @@ MonoBehaviour:
   deathHealth: 0
   maxScale: 0
   selfHealth: 0
+  canCollide: 0
   self: {fileID: 0}
   rb: {fileID: 0}
   projectile: {fileID: 4202649356396206402, guid: 842d762fdf8042a4084e2a1d62fbae68, type: 3}
@@ -124,6 +125,7 @@ MonoBehaviour:
   forceLimit: 100
   force: {x: 0, y: 0, z: 0}
   timing: 0
+  source: {fileID: 0}
 --- !u!54 &-4782475196192527949
 Rigidbody:
   m_ObjectHideFlags: 0
