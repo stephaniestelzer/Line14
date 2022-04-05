@@ -7,6 +7,7 @@ public class SlimeBasic : SlimeBase
 {
     public GameObject player;
     ENPCHealthBar healthBar;
+    public GameObject snowmanPrefab;
 
     void Start()
     {
@@ -50,6 +51,10 @@ public class SlimeBasic : SlimeBase
      public void ScaleSelfM(){
          timing = ((RandU.RandOne(9)/10f) + 0.2f);
          if(selfHealth <= 0){
+            Debug.Log("slime dead");
+            Vector3 spawnPosition = transform.position;
+            spawnPosition.x = -2;
+            Instantiate(snowmanPrefab, spawnPosition, Quaternion.identity);
              Destroy(self);
          }
 
