@@ -16,6 +16,9 @@ public class PlayerStats : MonoBehaviour
     public Clock clock;
     public AudioSource source;
 
+    public GameObject penguin;
+    private SpriteRenderer spriteRenderer;
+
     #region Sigleton
     private static PlayerStats instance;
     public static PlayerStats Instance
@@ -40,6 +43,11 @@ public class PlayerStats : MonoBehaviour
     public float MaxHealth { get { return maxHealth; } }
     public float MaxTotalHealth { get { return maxTotalHealth; } }
 
+    private void Start()
+    {
+        spriteRenderer = penguin.gameObject.GetComponent<SpriteRenderer>();
+    }
+
     public void Heal(float health)
     {
         this.health += health;
@@ -50,6 +58,8 @@ public class PlayerStats : MonoBehaviour
     {
         health -= dmg;
         ClampHealth();
+
+        spriteRenderer.color = new Color(255, 0, 0, 0.5f);
 
         if (health == 0)
         { //game over
