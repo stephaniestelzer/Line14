@@ -4,6 +4,10 @@ using UnityEngine;
 
 public class Snowman : MonoBehaviour
 {
+
+    public Transform groundCheck;
+    public LayerMask groundLayer;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -13,6 +17,10 @@ public class Snowman : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        bool isGrounded = Physics.CheckSphere(groundCheck.position, 0.2f, groundLayer);
+        if (isGrounded)
+        {
+            Debug.Log("Hello");
+        }
     }
 }
