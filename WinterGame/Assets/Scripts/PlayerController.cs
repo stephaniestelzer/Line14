@@ -21,6 +21,7 @@ public class PlayerController : MonoBehaviour
     {
       startPosition = new Vector3(0f, 9.5f, -11f);
       animator = GetComponent<Animator>();
+      controller = GetComponent<CharacterController>();
     }
 
     // Update is called once per frame
