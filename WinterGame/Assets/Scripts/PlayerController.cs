@@ -7,6 +7,7 @@ public class PlayerController : MonoBehaviour
     public CharacterController controller;
     private Vector3 direction;
     [SerializeField] public float speed = 5f;
+    [SerializeField] public bool Jump = false;
     public float jumpForce = 10;
     public float gravity = -20;
     public Transform groundCheck;
@@ -42,10 +43,13 @@ public class PlayerController : MonoBehaviour
                   direction.y = jumpForce;
               }
               animator.SetFloat("speed", direction.z);
+              animator.SetBool("Jump", false);
           }
           if (!isGrounded)
           {
               //Debug.Log("Not grounded");
+              animator.SetBool("Jump", true);
+
           }
 
           controller.Move(direction * Time.deltaTime);
