@@ -81,7 +81,7 @@ public class SlimeBase : MonoBehaviour
         force.z =
             speed *
             (
-            GameObject.Find("Player").transform.position.z -
+            GameObject.Find("Linux_Penguin").transform.position.z -
             self.transform.position.z
             );
 

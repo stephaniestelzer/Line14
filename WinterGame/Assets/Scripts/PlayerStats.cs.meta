@@ -3,7 +3,14 @@ guid: 88085378c2d694c108caec1da15bd7a9
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - gameOver: {fileID: 919132149155446097, guid: 0c642729258c742249a360a3b1ddd8c9, type: 3}
+  - gameWin: {fileID: 919132149155446097, guid: 0c642729258c742249a360a3b1ddd8c9, type: 3}
+  - gameLoss: {fileID: 919132149155446097, guid: 0c642729258c742249a360a3b1ddd8c9, type: 3}
+  - menuManager: {instanceID: 0}
+  - clock: {instanceID: 0}
+  - source: {instanceID: 0}
+  - penguin: {fileID: 919132149155446097, guid: 0c642729258c742249a360a3b1ddd8c9, type: 3}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 
