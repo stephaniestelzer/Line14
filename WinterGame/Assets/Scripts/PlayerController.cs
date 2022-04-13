@@ -6,7 +6,7 @@ public class PlayerController : MonoBehaviour
 {
     public CharacterController controller;
     private Vector3 direction;
-    public float speed = 8;
+    [SerializeField] public float speed = 5f;
     public float jumpForce = 10;
     public float gravity = -20;
     public Transform groundCheck;
@@ -14,10 +14,12 @@ public class PlayerController : MonoBehaviour
     public MenuManager menuManager;
     public Clock clock;
     private Vector3 startPosition;
+    private Animator animator;
     // Start is called before the first frame update
     void Start()
     {
       startPosition = new Vector3(0f, 9.5f, -11f);
+      animator = GetComponent<Animator>();
     }
 
     // Update is called once per frame
@@ -44,7 +46,7 @@ public class PlayerController : MonoBehaviour
           {
               //Debug.Log("Not grounded");
           }
-
+          animator.SetFloat("speed", direction.z);
           controller.Move(direction * Time.deltaTime);
         }
     }
