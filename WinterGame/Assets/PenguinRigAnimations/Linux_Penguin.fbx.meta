@@ -1,8 +1,17 @@
 fileFormatVersion: 2
-guid: b44f7c3a385db40ae992613d2b14e0e9
+guid: 1392e5c9e2836414ba31c21f4e23883a
 ModelImporter:
   serializedVersion: 21202
-  internalIDToNameTable: []
+  internalIDToNameTable:
+  - first:
+      74: -3100369314251171874
+    second: Idle
+  - first:
+      74: -8873305435419487488
+    second: Linux Penguin (Armature)Action
+  - first:
+      74: 5539831331247536789
+    second: Jump
   externalObjects: {}
   materials:
     materialImportMode: 2
@@ -97,7 +106,7 @@ ModelImporter:
   autoGenerateAvatarMappingIfUnspecified: 1
   animationType: 2
   humanoidOversampling: 1
-  avatarSetup: 0
+  avatarSetup: 1
   addHumanoidExtraRootOnlyWhenUsingAvatar: 1
   additionalBone: 0
   userData: 

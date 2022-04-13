@@ -15,7 +15,7 @@ public class SlimeBasic : SlimeBase
         self = this.gameObject;
         force = new Vector3(0, jumpForce, 0);
         selfHealth = 5;
-        player = GameObject.Find("Player");
+        player = GameObject.Find("Popsicle");
         rb = this.GetComponent<Rigidbody>();
         healthBar = gameObject.GetComponent<ENPCHealthBar>();
         //events
