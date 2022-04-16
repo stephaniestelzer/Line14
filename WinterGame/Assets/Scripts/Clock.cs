@@ -9,7 +9,6 @@ public class Clock : MonoBehaviour
 {
     public TextMeshProUGUI textClock;
     public TextMeshProUGUI textClock2;
-    public TextMeshProUGUI textClock3;
     private float val;
     private float pausedVal;
     private float timeInit;
@@ -25,7 +24,6 @@ public class Clock : MonoBehaviour
     {
       textClock.text = "00:00";
       textClock2.text = "00:00";
-      textClock3.text = "00:00";
       val = Time.time;
       pausedVal = 0.0f;
       timeInit = 0.0f;
@@ -46,7 +44,6 @@ public class Clock : MonoBehaviour
         string second = LeadingZero(sec);
         textClock.text = minute + ":" + second;
         textClock2.text = textClock.text;
-        textClock3.text = textClock.text;
       }
     }
 

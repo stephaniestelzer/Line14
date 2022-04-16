@@ -11,6 +11,8 @@ public class ThrowProjectile : MonoBehaviour
     public AudioSource source;
     public AudioClip snowballSound;
     public AudioClip icicleSound;
+    public MenuManager menuManager;
+    public Clock clock;
 
     // Update is called once per frame
     void Update()
@@ -18,21 +20,24 @@ public class ThrowProjectile : MonoBehaviour
         Vector3 spawnlocation = transform.position;
         spawnlocation.y += penguinThrowHeight;
 
-        if (Input.GetMouseButtonDown(0)) { // Left mouse button pressed during frame
-            // Play sound
-            source.PlayOneShot(snowballSound);
-            // Create snowball
-            Instantiate(snowballToSpawn, spawnlocation, Quaternion.identity);
-        }
+        if (!menuManager.GetGameStatus() && !clock.paused)
+        {
+          if (Input.GetMouseButtonDown(0)) { // Left mouse button pressed during frame
+              // Play sound
+              source.PlayOneShot(snowballSound);
+              // Create snowball
+              Instantiate(snowballToSpawn, spawnlocation, Quaternion.identity);
+          }
 
-        if (Input.GetMouseButtonDown(1) && Inventory.numIcicles > 0) { // Right mouse button pressed during frame
-            // Play sound
-            source.PlayOneShot(icicleSound);
-            // Create icicle
-            Instantiate(icicleToSpawn, spawnlocation, Quaternion.identity);
-            // Decrease icicle inventory
-            Inventory.numIcicles--;
-            SnowflakeManager.RemoveIcicle();
+          if (Input.GetMouseButtonDown(1) && Inventory.numIcicles > 0) { // Right mouse button pressed during frame
+              // Play sound
+              source.PlayOneShot(icicleSound);
+              // Create icicle
+              Instantiate(icicleToSpawn, spawnlocation, Quaternion.identity);
+              // Decrease icicle inventory
+              Inventory.numIcicles--;
+              SnowflakeManager.RemoveIcicle();
+          }
         }
     }
 }

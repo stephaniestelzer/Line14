@@ -9,7 +9,6 @@ public class SnowflakeManager : MonoBehaviour
     public static int snowflakes;
     public TextMeshProUGUI snowText;
     public TextMeshProUGUI snowText2; //game over screen
-    public TextMeshProUGUI snowText3; //you won screen
     public TextMeshProUGUI iciclesText;
     public static int icicles;
     public static AudioSource source;
@@ -25,10 +24,9 @@ public class SnowflakeManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-      snowText.text = "Snowflakes: " + snowflakes ;
+      snowText.text = snowflakes.ToString();
       snowText2.text = snowflakes.ToString();
-      snowText3.text = snowflakes.ToString();
-      iciclesText.text = "Icicles: " + icicles;
+      iciclesText.text = icicles.ToString();
     }
 
     public static void playPickupSound() {

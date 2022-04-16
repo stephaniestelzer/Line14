@@ -9,8 +9,6 @@ public class TemperatureManager : MonoBehaviour
     public static int temperature;
     public TextMeshProUGUI tempText;
     public TextMeshProUGUI tempText2; //game over screen
-    public TextMeshProUGUI tempText3; //you won screen
-
     // Start is called before the first frame update
     void Start()
     {
@@ -20,9 +18,8 @@ public class TemperatureManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-      tempText.text = "Temperature: " + temperature + "°C";
+      tempText.text = temperature + "°C";
       tempText2.text = temperature + "°C";
-      tempText3.text = temperature + "°C";
     }
 
     public static void changeTemp(int num) //connect this to gameplay later
