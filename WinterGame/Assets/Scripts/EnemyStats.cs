@@ -9,6 +9,7 @@ public class EnemyStats : MonoBehaviour
     public int maxHealth;
     private int currentHealth;
     ENPCHealthBar healthBar;
+    //public GameObject snowflakeManager;
 
     // Start is called before the first frame update
     void Start()
@@ -33,6 +34,8 @@ public class EnemyStats : MonoBehaviour
           Debug.Log(healthBar.Value);
         }
         if (currentHealth <= 0) { // Enemy is dead
+            //add points
+            //snowflakeManager.snowflakes += 10;
             Destroy(gameObject);
         }
     }

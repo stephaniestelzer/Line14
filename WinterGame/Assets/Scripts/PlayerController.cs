@@ -17,13 +17,14 @@ public class PlayerController : MonoBehaviour
     public Clock clock;
     private Vector3 startPosition;
     private Animator animator;
+    public DialogueUI dialogueUI;
 
     // variables to change the direction of the character
     [HideInInspector]
     public bool isFacingLeft;
     [HideInInspector]
     public bool isFacingRight;
-    
+
     private Quaternion facingLeft;
     private Quaternion facingRight;
     // Start is called before the first frame update
@@ -53,7 +54,7 @@ public class PlayerController : MonoBehaviour
     void Update()
     {
         // Debug.Log(isFacingLeft);
-        if (!menuManager.GetGameStatus() && !clock.paused)
+        if (!menuManager.GetGameStatus() && !clock.paused && !dialogueUI.tutorial)
         {
           float hInput = Input.GetAxis("Horizontal");
           direction.z = hInput * speed;

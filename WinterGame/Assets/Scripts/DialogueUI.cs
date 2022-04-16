@@ -8,6 +8,7 @@ public class DialogueUI : MonoBehaviour
     public string[] lines;
     public float textSpeed;
     private int index;
+    public bool tutorial;
 
     void Start() {
         textComponent.text = string.Empty;
@@ -32,6 +33,7 @@ public class DialogueUI : MonoBehaviour
     {
         index = 0;
         StartCoroutine(TypeLine());
+        tutorial = true;
     }
 
     IEnumerator TypeLine()
@@ -53,6 +55,7 @@ public class DialogueUI : MonoBehaviour
         }
         else
         {
+            tutorial = false;
             gameObject.SetActive(false);
         }
     }

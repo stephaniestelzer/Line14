@@ -13,6 +13,7 @@ public class ThrowProjectile : MonoBehaviour
     public AudioClip icicleSound;
     public MenuManager menuManager;
     public Clock clock;
+    public DialogueUI dialogueUI;
 
     // Update is called once per frame
     void Update()
@@ -20,7 +21,7 @@ public class ThrowProjectile : MonoBehaviour
         Vector3 spawnlocation = transform.position;
         spawnlocation.y += penguinThrowHeight;
 
-        if (!menuManager.GetGameStatus() && !clock.paused)
+        if (!menuManager.GetGameStatus() && !clock.paused && !dialogueUI.tutorial)
         {
           if (Input.GetMouseButtonDown(0)) { // Left mouse button pressed during frame
               // Play sound
