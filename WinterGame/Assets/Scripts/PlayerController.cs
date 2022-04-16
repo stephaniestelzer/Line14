@@ -52,7 +52,7 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Debug.Log(isFacingLeft);
+        // Debug.Log(isFacingLeft);
         if (!menuManager.GetGameStatus() && !clock.paused)
         {
           float hInput = Input.GetAxis("Horizontal");
@@ -85,7 +85,8 @@ public class PlayerController : MonoBehaviour
               {
                   direction.y = jumpForce;
               }
-              animator.SetFloat("speed", direction.z);
+              animator.SetFloat("speed", Mathf.Abs(direction.z));
+              // Debug.Log(direction.z);
               animator.SetBool("Jump", false);
           }
           if (!isGrounded)
