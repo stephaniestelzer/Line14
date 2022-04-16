@@ -16,13 +16,10 @@ public class PlayerController : MonoBehaviour
     public MenuManager menuManager;
     public Clock clock;
     private Vector3 startPosition;
-    private Animator animator;
     public DialogueUI dialogueUI;
 
     // variables to change the direction of the character
-    [HideInInspector]
     public bool isFacingLeft;
-    [HideInInspector]
     public bool isFacingRight;
 
     private Quaternion facingLeft;
@@ -31,7 +28,6 @@ public class PlayerController : MonoBehaviour
     void Start()
     {
       startPosition = new Vector3(0f, 9.5f, -11f);
-      animator = GetComponent<Animator>();
       controller = GetComponent<CharacterController>();
       facingLeft = new Quaternion(transform.localRotation.x, (transform.localRotation.y + 180), transform.localRotation.z, 1);
       facingRight = new Quaternion(transform.localRotation.x, transform.localRotation.y, transform.localRotation.z, 1);
@@ -86,14 +82,14 @@ public class PlayerController : MonoBehaviour
               {
                   direction.y = jumpForce;
               }
-              animator.SetFloat("speed", Mathf.Abs(direction.z));
+              // animator.SetFloat("speed", Mathf.Abs(direction.z));
               // Debug.Log(direction.z);
-              animator.SetBool("Jump", false);
+              // animator.SetBool("Jump", false);
           }
           if (!isGrounded)
           {
               //Debug.Log("Not grounded");
-              animator.SetBool("Jump", true);
+              // animator.SetBool("Jump", true);
 
           }
 
