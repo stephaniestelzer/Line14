@@ -19,6 +19,7 @@ public class Clock : MonoBehaviour
     public TemperatureManager temperatureManager;
     public PlayerStats playerStats;
     public MenuManager menuManager;
+    public PauseButton pauseButton;
 
     void Start()
     {
@@ -67,6 +68,7 @@ public class Clock : MonoBehaviour
       {
         Debug.Log("paused");
         timeInit = Time.time;
+        pauseButton.changePause();
       }
     }
 
