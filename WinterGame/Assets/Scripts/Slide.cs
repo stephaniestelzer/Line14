@@ -11,6 +11,8 @@ public class Slide : MonoBehaviour
     float slopePos = 0, slopeWidth = 0;
     BoxCollider[] slopes;
 
+    
+
     //"Getting on Belly"
     float smooth = 5.0f;
     float tiltAngle = 60.0f;
@@ -26,6 +28,7 @@ public class Slide : MonoBehaviour
         {
             if(transform.position.z >= (a.bounds.min.z))
             {
+                Debug.Log("ERRR");
                 slopePos = a.bounds.min.z;
                 slopeWidth = a.bounds.max.z;
                 ret = true;

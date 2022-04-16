@@ -2,20 +2,20 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class MovingPlatform : MonoBehaviour
+public class Elevator : MonoBehaviour
 {
     bool up = false;
     public int min;
     public int max;
-    float speed = 2f;
+    float speed = 1f;
     public GameObject poppi;
 
     void FixedUpdate()
-    {  
+    {
         if (!up)
         {
             if (transform.position.y >= min)
-                transform.Translate(new Vector3(0, -3, 0)* Time.deltaTime * speed);
+                transform.Translate(new Vector3(0, -3, 3) * Time.deltaTime * speed);
             else
                 up = true;
 
@@ -23,7 +23,7 @@ public class MovingPlatform : MonoBehaviour
         else
         {
             if (transform.position.y <= max)
-                transform.Translate(new Vector3(0, 3, 0) * Time.deltaTime * speed);
+                transform.Translate(new Vector3(0, 3, -3) * Time.deltaTime * speed);
             else
                 up = false;
         }
