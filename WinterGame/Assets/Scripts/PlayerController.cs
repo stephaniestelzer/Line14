@@ -49,6 +49,7 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+      
         // Debug.Log(isFacingLeft);
         if (!menuManager.GetGameStatus() && !clock.paused && !dialogueUI.tutorial)
         {
@@ -56,6 +57,7 @@ public class PlayerController : MonoBehaviour
           direction.z = hInput * speed;
           bool isGrounded = Physics.CheckSphere(groundCheck.position, 0.2f, groundLayer);
           direction.y += gravity * Time.deltaTime;
+          
 
           controller.Move(direction * Time.deltaTime);
           Vector3 dir = direction * Time.deltaTime;

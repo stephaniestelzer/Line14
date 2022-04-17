@@ -11,6 +11,7 @@ public class BossEventHandle : MonoBehaviour
     public GameObject slime1;
     public GameObject slime2;
     public GameObject slime3;
+    public GameObject walls;
 
     public static Vector3 position;
     public static float health = 100;
@@ -22,7 +23,7 @@ public class BossEventHandle : MonoBehaviour
         // touched events
         fEnable = true;
         SetHealth(100);
-
+        walls.SetActive(false);
         if(GEvents.current != null){
         GEvents.current.onDeathOne += onDeathOne;
         GEvents.current.onDeathTwo += onDeathTwo;
@@ -61,8 +62,10 @@ public class BossEventHandle : MonoBehaviour
 
 
     void CheckSleep(){
-        if(fEnable && Mathf.Abs(transform.position.z - player.transform.position.z) <= 50){
+        if(fEnable && Mathf.Abs(transform.position.z - player.transform.position.z) <= 19){
+            Debug.Log("i wake");
             GEvents.current.WakeArea();
+            walls.SetActive(true);
             fEnable = false;
         }
     }

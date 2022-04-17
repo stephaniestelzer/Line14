@@ -8,11 +8,16 @@ public class SlimeBasic : SlimeBase
     public GameObject player;
     ENPCHealthBar healthBar;
     public GameObject snowmanPrefab;
+    Vector3 squash;
+    Vector3 baseScale;
 
     void Start()
     {
+  
         //definitions
         self = this.gameObject;
+        squash = self.transform.localScale;
+        baseScale = squash;
         force = new Vector3(0, jumpForce, 0);
         selfHealth = 5;
         player = GameObject.Find("Popsicle");
@@ -33,6 +38,8 @@ public class SlimeBasic : SlimeBase
     
     void Update()
     {
+        
+        self.transform.localScale = squash;
         healthBar.Value = (int)selfHealth;
         if(!active){
             if(Mathf.Abs(transform.position.z - player.transform.position.z) <= 30){
@@ -44,6 +51,12 @@ public class SlimeBasic : SlimeBase
             rb.useGravity = true;
             ScaleSelfM();
             ActionHandle();
+            if(player.transform.position.z - transform.position.z > 0){
+                squash.z = -baseScale.z;
+            }
+            else{
+                squash.z = baseScale.z;
+            }
         }
     }
 
@@ -59,6 +72,29 @@ public class SlimeBasic : SlimeBase
          }
 
      }
+
+ public void ActionHandle()
+    {
+        //Debug.Log(timeManager);
+        if (timeManager > 0)
+        {
+            if (!doingAction)
+            {
+                if(squash.y > 0.1f){
+                squash.y = squash.y - .005f;
+                }
+                timeManager -= Time.deltaTime;
+            }
+        }
+        else
+        {
+            timeManager = timing;
+            squash.y = baseScale.y;
+            RandomAction();
+            canCollide = true;
+        }
+    }
+
 
        public override void RandomAction()
     {
