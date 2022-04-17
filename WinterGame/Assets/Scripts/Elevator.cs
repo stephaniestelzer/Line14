@@ -15,7 +15,7 @@ public class Elevator : MonoBehaviour
         if (!up)
         {
             if (transform.position.y >= min)
-                transform.Translate(new Vector3(0, -3, 3) * Time.deltaTime * speed);
+                transform.Translate(new Vector3(0, -3, -3) * Time.deltaTime * speed);
             else
                 up = true;
 
@@ -23,7 +23,7 @@ public class Elevator : MonoBehaviour
         else
         {
             if (transform.position.y <= max)
-                transform.Translate(new Vector3(0, 3, -3) * Time.deltaTime * speed);
+                transform.Translate(new Vector3(0, 3, 3) * Time.deltaTime * speed);
             else
                 up = false;
         }

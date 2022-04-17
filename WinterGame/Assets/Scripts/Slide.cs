@@ -11,8 +11,6 @@ public class Slide : MonoBehaviour
     float slopePos = 0, slopeWidth = 0;
     BoxCollider[] slopes;
 
-    
-
     //"Getting on Belly"
     float smooth = 5.0f;
     float tiltAngle = 60.0f;
@@ -21,14 +19,16 @@ public class Slide : MonoBehaviour
     //Automatic "Slide"
     public float speed = 8;
 
+    //My Array of Slopes stopped working for some reason? --> Got it! Yaaay!!!
+    
+
     bool checkSlope()
     {
         bool ret = false;
         foreach (BoxCollider a in slopes)
         {
-            if(transform.position.z >= (a.bounds.min.z))
+            if (transform.position.z >= (a.bounds.min.z))
             {
-                Debug.Log("ERRR");
                 slopePos = a.bounds.min.z;
                 slopeWidth = a.bounds.max.z;
                 ret = true;
