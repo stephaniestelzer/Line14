@@ -46,7 +46,9 @@ class SlimeOneController : SlimeBase
     // Update is called once per frame
     void Update()
     {
-
+        if(self.transform.position.y < -30){
+             GEvents.current.DeathThree();
+        }
         if(active){
         ScaleSelf();
         ActionHandle();
@@ -95,9 +97,11 @@ class SlimeOneController : SlimeBase
 
         if(tracking){
             if(hoptimer > 0){
+                Debug.Log("waiting to be in air");
                 hoptimer -= Time.deltaTime;
             }else{
-                if(hoptimer > -5){ //tune this timing
+                if(hoptimer > -3.5){ //tune this timing
+                Debug.Log("tracking 5 secondsd" + " " + hoptimer);
                 hoptimer -= Time.deltaTime;
                 rb.transform.position = new Vector3(self.transform.position.x, self.transform.position.y,GameObject.Find("Player").transform.position.z);
                 shadow.SetActive(true);
@@ -125,8 +129,14 @@ class SlimeOneController : SlimeBase
   private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.CompareTag("snowball")) {
-            GEvents.current.DamageTick();
+            source.PlayOneShot(source.clip);
+            BossEventHandle.DeductHealth(1);
         }
+        if (other.gameObject.CompareTag("icicle")) {
+            source.PlayOneShot(source.clip);
+            BossEventHandle.DeductHealth(2);
+        }
+
     }
 
 

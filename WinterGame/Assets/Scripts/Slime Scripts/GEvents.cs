@@ -37,9 +37,9 @@ public event Action onDeathTwo;
 
     public event Action onDeathThree;
 
-    public void DeathThree(Vector3 position)
+    public void DeathThree()
     {
-        BossEventHandle.position = position;
+        
         if(onDeathThree != null)
         {
             onDeathThree();

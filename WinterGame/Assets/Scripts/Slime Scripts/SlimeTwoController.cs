@@ -5,7 +5,8 @@ using UnityEngine;
 class SlimeTwoController : SlimeBase
 {
 
-    //public GameObject project;
+    
+    Vector3 scalefull;
         //public string namer;
     // Start is called before the first frame update
     void Start()
@@ -13,6 +14,7 @@ class SlimeTwoController : SlimeBase
 
         //definitions
         self = this.gameObject;
+        scalefull = self.transform.localScale;
         force = new Vector3(0, jumpForce / 1.3f, 0);
         maxScale = 5;
         deathHealth = 33;
@@ -35,6 +37,10 @@ class SlimeTwoController : SlimeBase
     // Update is called once per frame
     void Update()
     {
+        if(self.transform.position.y < -30){
+             BossEventHandle.DeductHealth(selfHealth);
+        }
+        self.transform.localScale = scalefull;
         if(active){
         ScaleSelfM();
         ActionHandle();
@@ -91,6 +97,28 @@ class SlimeTwoController : SlimeBase
 
 
     }
+
+  private void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.CompareTag("snowball")) {
+            selfHealth -= 1; //hardcoded
+            source.PlayOneShot(source.clip);
+            BossEventHandle.DeductHealth(1);
+            scalefull.x = scalefull.x -0.1f;
+            scalefull.y = scalefull.y -0.1f;
+            scalefull.z = scalefull.z -0.1f;
+        }
+        if (other.gameObject.CompareTag("icicle")) {
+            selfHealth -= 2; //hardcoded
+            source.PlayOneShot(source.clip);
+            BossEventHandle.DeductHealth(2);
+            scalefull.x = scalefull.x -0.2f;
+            scalefull.y = scalefull.y -0.2f;
+            scalefull.z = scalefull.z -0.2f;
+        }
+
+    }
+
 
 
     public override void Perish()

@@ -44,6 +44,22 @@ public class SlimeThreeController : SlimeBase
 
      }
 
+  private void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.CompareTag("snowball")) {
+            selfHealth -= 1; //hardcoded
+            source.PlayOneShot(source.clip);
+            BossEventHandle.DeductHealth(1);
+        }
+        if (other.gameObject.CompareTag("icicle")) {
+            selfHealth -= 2; //hardcoded
+            source.PlayOneShot(source.clip);
+            BossEventHandle.DeductHealth(2);
+        }
+
+    }
+
+
        public override void RandomAction()
     {
         doingAction = true;
