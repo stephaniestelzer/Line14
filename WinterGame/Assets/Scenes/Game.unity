@@ -22678,6 +22678,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1621924536}
     - target: {fileID: 8068908251058431775, guid: def01f485151744dbb13f8705a5638ef, type: 3}
+      propertyPath: throwSpeed
+      value: 0.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 8068908251058431775, guid: def01f485151744dbb13f8705a5638ef, type: 3}
       propertyPath: menuManager
       value: 
       objectReference: {fileID: 1102823846}

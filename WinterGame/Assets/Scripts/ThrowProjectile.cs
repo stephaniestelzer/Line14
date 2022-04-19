@@ -15,6 +15,12 @@ public class ThrowProjectile : MonoBehaviour
     public Clock clock;
     public DialogueUI dialogueUI;
 
+    [SerializeField] 
+    public float throwSpeed = 0.5f;   
+    bool cooldown;
+    void Start() {
+        cooldown = true;    
+    }
     // Update is called once per frame
     void Update()
     {
@@ -23,11 +29,13 @@ public class ThrowProjectile : MonoBehaviour
 
         if (!menuManager.GetGameStatus() && !clock.paused && !dialogueUI.tutorial)
         {
-          if (Input.GetMouseButtonDown(0)) { // Left mouse button pressed during frame
+          if (Input.GetMouseButtonDown(0) && cooldown) { // Left mouse button pressed during frame
               // Play sound
               source.PlayOneShot(snowballSound);
               // Create snowball
               Instantiate(snowballToSpawn, spawnlocation, Quaternion.identity);
+              // call cooldown function 
+              StartCoroutine(ExampleCoroutine());
           }
 
           if (Input.GetMouseButtonDown(1) && Inventory.numIcicles > 0) { // Right mouse button pressed during frame
@@ -40,5 +48,21 @@ public class ThrowProjectile : MonoBehaviour
               SnowflakeManager.RemoveIcicle();
           }
         }
+    }
+
+    IEnumerator ExampleCoroutine()
+    {
+        cooldown = false;
+        //Print the time of when the function is first called.
+        Debug.Log("Cooldown started : " + Time.time);
+
+        //yield on a new YieldInstruction that waits for 5 seconds.
+        yield return new WaitForSeconds(throwSpeed);
+
+        //make ability available after cooldown 
+        cooldown = true;
+
+        //After we have waited 5 seconds print the time again.
+        Debug.Log("Cooldown ended : " + Time.time);
     }
 }
