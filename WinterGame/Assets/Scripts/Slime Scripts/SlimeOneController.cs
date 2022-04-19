@@ -50,12 +50,30 @@ class SlimeOneController : SlimeBase
              GEvents.current.DeathThree();
         }
         if(active){
-        ScaleSelf();
+        ScaleSelff();
         ActionHandle();
 
         SkyhopTracking();
         }
     }
+
+    public void ScaleSelff(){
+        float scale = (maxScale - BossEventHandle.GetHealth()) / maxScale + 0.5f;
+        float scalez = scale;
+        if(GameObject.Find("Player").transform.position.z - transform.position.z > 0){
+                //Debug.Log("flip it!");
+                scalez = -scale;
+            }
+            
+        self.transform.localScale = new Vector3(scale, scale, -scalez);
+        if(BossEventHandle.GetHealth() < deathHealth){ //define in subclass
+            Perish();
+            Destroy(self);
+            //active = false;
+        }
+    }
+
+
 
     public override void RandomAction()
     {

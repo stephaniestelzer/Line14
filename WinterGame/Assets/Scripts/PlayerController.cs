@@ -61,7 +61,7 @@ public class PlayerController : MonoBehaviour
           
           controller.Move(direction * Time.deltaTime);
           Vector3 dir = direction * Time.deltaTime;
-          Debug.Log(Mathf.Abs(dir.z));
+          //Debug.Log(Mathf.Abs(dir.z));
           animator.SetFloat("speed", Mathf.Abs(dir.z));
 
           if(dir.z < 0){
@@ -78,7 +78,7 @@ public class PlayerController : MonoBehaviour
 
           if (isGrounded)
           {
-            Debug.Log("grounded");
+           // Debug.Log("grounded");
               if (Input.GetButtonDown("Jump"))
               {
                   direction.y = jumpForce;

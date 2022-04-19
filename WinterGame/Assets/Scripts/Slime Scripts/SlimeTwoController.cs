@@ -51,6 +51,12 @@ class SlimeTwoController : SlimeBase
         //float scale = (maxScale - selfHealth) / maxScale + 0.5f;
        // self.transform.localScale = new Vector3(scale, scale,scale);
         timing = RandU.RandOne(2) + ((RandU.RandOne(8))/10f);
+            if(GameObject.Find("Player").transform.position.z - transform.position.z > 0){
+                //Debug.Log("flip it!");
+                scalefull.z = Mathf.Abs(scalefull.z);
+            }else{
+                scalefull.z = -Mathf.Abs(scalefull.z);
+            }
         if(selfHealth < deathHealth){ 
             Perish();
             Destroy(self);

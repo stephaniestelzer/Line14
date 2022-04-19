@@ -38,11 +38,11 @@ public class Projectile : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        /*if (other.gameObject.CompareTag("enemy")) {
+        if (other.gameObject.CompareTag("Slime")) {
             //EnemyStats enemyStats = (EnemyStats)other.gameObject.GetComponent(typeof(EnemyStats));
             //enemyStats.takeDamage(damageAmount);
-            Destroy(other.gameObject);
-        }*/
+            Destroy(gameObject);
+        }
 
         if (other.gameObject.CompareTag("environment")) {
             Destroy(gameObject);

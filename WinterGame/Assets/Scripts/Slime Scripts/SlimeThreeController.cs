@@ -4,15 +4,16 @@ using UnityEngine;
 
 public class SlimeThreeController : SlimeBase
 {
-    
+    Vector3 scalefull;
 
     void Start()
     {
+        
         //definitions
         self = this.gameObject;
         force = new Vector3(0, jumpForce, 0);
         selfHealth = 3;
-
+        scalefull = self.transform.localScale;
         rb = this.GetComponent<Rigidbody>();
         
         //events
@@ -32,11 +33,18 @@ public class SlimeThreeController : SlimeBase
         if(active){
             ScaleSelfM();
             ActionHandle();
+            self.transform.localScale = scalefull;
         }
     }
 
 
      public void ScaleSelfM(){
+          if(GameObject.Find("Player").transform.position.z - transform.position.z > 0){
+                //Debug.Log("flip it!");
+                scalefull.z = Mathf.Abs(scalefull.z);
+            }else{
+                scalefull.z = -Mathf.Abs(scalefull.z);
+            }
          timing = ((RandU.RandOne(9)/10f) + 0.2f);
          if(selfHealth < 0){
              Destroy(self);
@@ -56,12 +64,17 @@ public class SlimeThreeController : SlimeBase
             source.PlayOneShot(source.clip);
             BossEventHandle.DeductHealth(2);
         }
+        if (canCollide && other.gameObject.CompareTag("Player")) {
+            PlayerStats.Instance.TakeDamage(1, true);
+            canCollide = false;
+        }
 
     }
 
 
        public override void RandomAction()
     {
+        canCollide = true;
         doingAction = true;
         StartHop();
     }
