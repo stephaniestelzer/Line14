@@ -18,7 +18,6 @@ public class Manager : MonoBehaviour
 
     public void GoBack()
     {
-      //save game state here
       SceneManager.LoadScene(0);
     }
 }

@@ -10,10 +10,11 @@ public class SlimeBasic : SlimeBase
     public GameObject snowmanPrefab;
     Vector3 squash;
     Vector3 baseScale;
+    public SnowflakeManager snowflakeManager;
 
     void Start()
     {
-  
+
         //definitions
         self = this.gameObject;
         squash = self.transform.localScale;
@@ -35,10 +36,10 @@ public class SlimeBasic : SlimeBase
         canCollide = true;
     }
 
-    
+
     void Update()
     {
-        
+
         self.transform.localScale = squash;
         healthBar.Value = (int)selfHealth;
         if(!active){
@@ -63,7 +64,9 @@ public class SlimeBasic : SlimeBase
 
      public void ScaleSelfM(){
          timing = ((RandU.RandOne(9)/10f) + 0.2f);
+         //slime death
          if(selfHealth <= 0){
+            SnowflakeManager.changeSnow(10);
             Debug.Log("slime dead");
             Vector3 spawnPosition = transform.position;
             spawnPosition.x = -2;

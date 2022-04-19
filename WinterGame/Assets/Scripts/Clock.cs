@@ -4,6 +4,7 @@ using UnityEngine.UI;
 using System;
 using UnityEngine;
 using TMPro;
+using UnityEngine.SceneManagement;
 
 public class Clock : MonoBehaviour
 {
@@ -74,7 +75,7 @@ public class Clock : MonoBehaviour
 
     public void reset()
     {
-      //reset clock
+      /*//reset clock
       val = Time.time;
       pausedVal = 0.0f;
       timeInit = Time.time;
@@ -96,7 +97,8 @@ public class Clock : MonoBehaviour
       Debug.Log(paused);
 
       if(menuManager.gameIsOver)
-        menuManager.ToggleGameStatus();
+        menuManager.ToggleGameStatus();*/
+      SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 
     public string GetTime()

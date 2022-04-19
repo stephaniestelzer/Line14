@@ -9,7 +9,7 @@ public class EnemyStats : MonoBehaviour
     public int maxHealth;
     private int currentHealth;
     ENPCHealthBar healthBar;
-    //public GameObject snowflakeManager;
+    //SnowflakeManager snowflakeManager;
 
     // Start is called before the first frame update
     void Start()
