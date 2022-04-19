@@ -25,8 +25,8 @@ public class PlayerController : MonoBehaviour
     public bool isFacingLeft;
     public bool isFacingRight;
 
-    private Quaternion facingLeft;
-    private Quaternion facingRight;
+    public Quaternion facingLeft;
+    public Quaternion facingRight;
     // Start is called before the first frame update
     void Start()
     {

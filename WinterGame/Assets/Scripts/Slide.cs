@@ -57,6 +57,7 @@ public class Slide : MonoBehaviour
                 transform.rotation = Quaternion.Slerp(transform.rotation, target, Time.deltaTime * smooth);
                 cc.enabled = false;
                 this.GetComponent<PlayerController>().enabled = false;
+                this.GetComponent<Animator>().enabled = false;
                 //
                 if (fix)
                 {
@@ -79,6 +80,7 @@ public class Slide : MonoBehaviour
                 transform.rotation = newQuaternion;
                 cc.enabled = true;
                 this.GetComponent<PlayerController>().enabled = true;
+                this.GetComponent<Animator>().enabled = true;
                 /*
                 if (posFix)
                 {
