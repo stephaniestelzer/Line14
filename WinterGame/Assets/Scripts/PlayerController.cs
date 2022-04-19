@@ -25,8 +25,8 @@ public class PlayerController : MonoBehaviour
     public bool isFacingLeft;
     public bool isFacingRight;
 
-    public Quaternion facingLeft;
-    public Quaternion facingRight;
+    public static Quaternion facingLeft;
+    public static Quaternion facingRight;
     // Start is called before the first frame update
     void Start()
     {
@@ -105,10 +105,10 @@ public class PlayerController : MonoBehaviour
               isGrounded = true;
               timeout = true;
             }
-              Debug.Log("Not grounded");
-              Debug.Log(timeManager);
-              animator.SetBool("Jump", true);
-              // animator.SetBool("Jump", true);
+            // Debug.Log("Not grounded");
+            Debug.Log(timeManager);
+            animator.SetBool("Jump", true);
+            // animator.SetBool("Jump", true);
           }
 
         }

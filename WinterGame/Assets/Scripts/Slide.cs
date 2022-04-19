@@ -21,7 +21,6 @@ public class Slide : MonoBehaviour
     public float speed;
 
     //My Array of Slopes stopped working for some reason? --> Got it! Yaaay!!!
-    
 
     bool checkSlope()
     {
@@ -75,10 +74,11 @@ public class Slide : MonoBehaviour
             }
             else if (transform.position.z > slopeWidth)
             {
-                Quaternion newQuaternion = new Quaternion();
-                newQuaternion.Set(0, 0, 0, 1);
-                transform.rotation = newQuaternion;
-                cc.enabled = true;
+                // Quaternion newQuaternion = new Quaternion();
+                // newQuaternion.Set(0, 0, 0, 1);
+                // transform.localRotation = current;
+                // cc.enabled = true;
+                this.GetComponent<CharacterController>().enabled = true;
                 this.GetComponent<PlayerController>().enabled = true;
                 this.GetComponent<Animator>().enabled = true;
                 /*
