@@ -5812,7 +5812,7 @@ MonoBehaviour:
   - For saving the ice kingdom, Popsicle has been named The Great Winter Knight!
   - "Hurray! It\u2019s cold again. Now all the snow creatures can have their annual
     snowball fight."
-  - "Thank you for playing Popsicle\u2019s Snowy Adventure, a game by Line14."
+  - Thank you for playing Popsicle's Polar Dash, a game by Line 14.
   textSpeed: 0.05
   tutorial: 0
 --- !u!114 &438193800
@@ -11748,9 +11748,9 @@ TextMesh:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 922392840}
-  m_Text: Next Level?
+  m_Text: Checkpoint
   m_OffsetZ: 1
-  m_CharacterSize: 0.3
+  m_CharacterSize: 0.1
   m_LineSpacing: 1
   m_Anchor: 7
   m_Alignment: 0
@@ -11758,7 +11758,7 @@ TextMesh:
   m_FontSize: 0
   m_FontStyle: 0
   m_RichText: 1
-  m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+  m_Font: {fileID: 12800000, guid: 2f1332e62cc2c46ea856dc397db5f464, type: 3}
   m_Color:
     serializedVersion: 2
     rgba: 4294967295
@@ -11782,7 +11782,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10100, guid: 0000000000000000e000000000000000, type: 0}
+  - {fileID: 2100000, guid: 2f1332e62cc2c46ea856dc397db5f464, type: 3}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -12002,9 +12002,9 @@ TextMesh:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 936353825}
-  m_Text: Igloo CP2
+  m_Text: Checkpoint
   m_OffsetZ: 1
-  m_CharacterSize: 0.3
+  m_CharacterSize: 0.1
   m_LineSpacing: 1
   m_Anchor: 7
   m_Alignment: 0
@@ -12012,7 +12012,7 @@ TextMesh:
   m_FontSize: 0
   m_FontStyle: 0
   m_RichText: 1
-  m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+  m_Font: {fileID: 12800000, guid: 2f1332e62cc2c46ea856dc397db5f464, type: 3}
   m_Color:
     serializedVersion: 2
     rgba: 4294967295
@@ -12036,7 +12036,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10100, guid: 0000000000000000e000000000000000, type: 0}
+  - {fileID: 2100000, guid: 2f1332e62cc2c46ea856dc397db5f464, type: 3}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -12071,7 +12071,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1151187571366177996, guid: d937eb5f835c1374392fd154c2e0bf41, type: 3}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1151187571366177996, guid: d937eb5f835c1374392fd154c2e0bf41, type: 3}
       propertyPath: snowflakeManager
@@ -16956,9 +16956,9 @@ TextMesh:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1404969374}
-  m_Text: Igloo CP1
+  m_Text: Checkpoint
   m_OffsetZ: 1
-  m_CharacterSize: 0.3
+  m_CharacterSize: 0.1
   m_LineSpacing: 1
   m_Anchor: 7
   m_Alignment: 0
@@ -16966,7 +16966,7 @@ TextMesh:
   m_FontSize: 0
   m_FontStyle: 0
   m_RichText: 1
-  m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+  m_Font: {fileID: 12800000, guid: 2f1332e62cc2c46ea856dc397db5f464, type: 3}
   m_Color:
     serializedVersion: 2
     rgba: 4294967295
@@ -16990,7 +16990,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10100, guid: 0000000000000000e000000000000000, type: 0}
+  - {fileID: 2100000, guid: 2f1332e62cc2c46ea856dc397db5f464, type: 3}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -21868,7 +21868,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1151187571366177996, guid: d937eb5f835c1374392fd154c2e0bf41, type: 3}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1151187571366177996, guid: d937eb5f835c1374392fd154c2e0bf41, type: 3}
       propertyPath: snowflakeManager
@@ -23829,9 +23829,9 @@ TextMesh:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1833991339}
-  m_Text: Igloo CP2
+  m_Text: Checkpoint
   m_OffsetZ: 1
-  m_CharacterSize: 0.3
+  m_CharacterSize: 0.1
   m_LineSpacing: 1
   m_Anchor: 7
   m_Alignment: 0
@@ -23839,7 +23839,7 @@ TextMesh:
   m_FontSize: 0
   m_FontStyle: 0
   m_RichText: 1
-  m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+  m_Font: {fileID: 12800000, guid: 2f1332e62cc2c46ea856dc397db5f464, type: 3}
   m_Color:
     serializedVersion: 2
     rgba: 4294967295
@@ -23863,7 +23863,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10100, guid: 0000000000000000e000000000000000, type: 0}
+  - {fileID: 2100000, guid: 2f1332e62cc2c46ea856dc397db5f464, type: 3}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -25044,7 +25044,7 @@ PrefabInstance:
       objectReference: {fileID: 904014251}
     - target: {fileID: 1151187571366177996, guid: d937eb5f835c1374392fd154c2e0bf41, type: 3}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1151187571366177996, guid: d937eb5f835c1374392fd154c2e0bf41, type: 3}
       propertyPath: projectile
@@ -26223,9 +26223,9 @@ RectTransform:
   m_Father: {fileID: 1244622478}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -178, y: -372}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: -49, y: -369}
   m_SizeDelta: {x: 195.924, y: 16}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2010413259
@@ -27594,6 +27594,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 904014251}
   controller: {fileID: 0}
+  winDialogue: {fileID: 0}
+  menuManager: {fileID: 0}
 --- !u!1 &2093154975
 GameObject:
   m_ObjectHideFlags: 0

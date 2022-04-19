@@ -9,10 +9,8 @@ public class HealthBarUI : MonoBehaviour
     private float maxHealth = 100f;
     public static float currentHealth;
 
-
     private void Start(){
         HealthBar = GetComponent<Image>();
-
     }
 
     private void Update(){

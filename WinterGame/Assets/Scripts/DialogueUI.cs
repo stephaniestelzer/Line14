@@ -9,7 +9,8 @@ public class DialogueUI : MonoBehaviour
     public float textSpeed;
     private int index;
     public bool tutorial;
-
+    public MenuManager menuManager;
+    public bool win;
     void Start() {
         textComponent.text = string.Empty;
         StartDialogue();
@@ -57,6 +58,9 @@ public class DialogueUI : MonoBehaviour
         {
             tutorial = false;
             gameObject.SetActive(false);
+            if (win) {
+              menuManager.ToggleGameStatus(true);
+            }
         }
     }
 }

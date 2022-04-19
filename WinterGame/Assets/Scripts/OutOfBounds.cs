@@ -7,7 +7,7 @@ public class OutOfBounds : MonoBehaviour
 
     public GameObject player;
     public CharacterController controller; //both of these defined in the inspector
-
+    public GameObject winDialogue;
 
     private static int checkpoint;
     private static Vector3 lastCheckP;
@@ -22,13 +22,15 @@ public class OutOfBounds : MonoBehaviour
         checkpoint = 0;
         lastCheckP = new Vector3(0f,10f,-12f); //spawn
     }
-    
+
     void Update()
     {
         //cannot progress backwards
         if(checkpoint < 4 && player.transform.position.z > 692){
             lastCheckP = new Vector3(0f,9f,692f);
             checkpoint = 4;
+            Debug.Log("Boss defeated");
+            winDialogue.SetActive(true);
         }else if(checkpoint < 3 &&player.transform.position.z > 578f){
             lastCheckP = new Vector3(0f,20f, 578f);
             checkpoint = 3;
