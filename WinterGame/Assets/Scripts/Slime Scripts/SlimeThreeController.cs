@@ -47,6 +47,7 @@ public class SlimeThreeController : SlimeBase
             }
          timing = ((RandU.RandOne(9)/10f) + 0.2f);
          if(selfHealth < 0){
+             PlayerStats.Instance.Heal(1);
              Destroy(self);
          }
 

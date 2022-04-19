@@ -18,10 +18,12 @@ public class BossEventHandle : MonoBehaviour
     public static float health = 100;
     public bool damage;
     private bool fEnable;
+    private bool once;
 
     private void Start()
     {
         // touched events
+        once = true;
         fEnable = true;
         SetHealth(100);
         walls.SetActive(false);
@@ -98,7 +100,10 @@ public class BossEventHandle : MonoBehaviour
         //win!
         walls.SetActive(false);
         healthBar.SetActive(false);
+        if(once){
         SnowflakeManager.changeSnow(150);
+        once = false;
+        }
     }
 
 
