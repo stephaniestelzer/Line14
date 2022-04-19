@@ -5751,9 +5751,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   textComponent: {fileID: 1477848422}
   lines:
-  - You Won!
-  - You Won!!!
-  - You Won!!!!!!
+  - 'You Did It! You defeated the evil slimes and broke the curse! '
+  - For saving the ice kingdom, Popsicle has been named The Great Winter Knight!
+  - "Hurray! It\u2019s cold again. Now all the snow creatures can have their annual
+    snowball fight."
+  - "Thank you for playing Popsicle\u2019s Snowy Adventure, a game by Line14."
   textSpeed: 0.05
   tutorial: 0
 --- !u!114 &438193800
