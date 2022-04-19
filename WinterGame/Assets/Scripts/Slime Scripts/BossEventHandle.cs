@@ -98,7 +98,7 @@ public class BossEventHandle : MonoBehaviour
         //win!
         walls.SetActive(false);
         healthBar.SetActive(false);
-
+        SnowflakeManager.changeSnow(150);
     }
 
 

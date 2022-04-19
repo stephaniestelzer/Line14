@@ -130,6 +130,7 @@ class SlimeTwoController : SlimeBase
     public override void Perish()
     {
         GEvents.current.DeathTwo(self.transform.position);
+        PlayerStats.Instance.Heal(1);
     }
 
 }
