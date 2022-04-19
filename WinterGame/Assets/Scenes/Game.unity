@@ -6830,26 +6830,6 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 1392e5c9e2836414ba31c21f4e23883a, type: 3}
   m_PrefabInstance: {fileID: 519536016}
   m_PrefabAsset: {fileID: 0}
---- !u!95 &519536018
-Animator:
-  serializedVersion: 4
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 519536017}
-  m_Enabled: 1
-  m_Avatar: {fileID: 9000000, guid: 1392e5c9e2836414ba31c21f4e23883a, type: 3}
-  m_Controller: {fileID: 9100000, guid: 239565570cb45495bafc85d86f03e356, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!23 &519536024
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -11508,6 +11488,26 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 07773037df629784e956654682385989, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!95 &904014287
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 904014251}
+  m_Enabled: 1
+  m_Avatar: {fileID: 9000000, guid: 1392e5c9e2836414ba31c21f4e23883a, type: 3}
+  m_Controller: {fileID: 9100000, guid: 239565570cb45495bafc85d86f03e356, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &917346147
 GameObject:
   m_ObjectHideFlags: 0
@@ -22555,7 +22555,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8068908251058431770, guid: def01f485151744dbb13f8705a5638ef, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 11.6
+      value: 10.96
       objectReference: {fileID: 0}
     - target: {fileID: 8068908251058431770, guid: def01f485151744dbb13f8705a5638ef, type: 3}
       propertyPath: m_LocalPosition.z
@@ -22605,6 +22605,14 @@ PrefabInstance:
       propertyPath: menuManager
       value: 
       objectReference: {fileID: 1102823846}
+    - target: {fileID: 8068908252111351555, guid: def01f485151744dbb13f8705a5638ef, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.01
+      objectReference: {fileID: 0}
+    - target: {fileID: 8068908252111351555, guid: def01f485151744dbb13f8705a5638ef, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -1.05
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: def01f485151744dbb13f8705a5638ef, type: 3}
 --- !u!1001 &1763210997

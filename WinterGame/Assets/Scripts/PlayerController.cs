@@ -6,8 +6,8 @@ public class PlayerController : MonoBehaviour
 {
     public CharacterController controller;
     private Vector3 direction;
-    [SerializeField] public float speed = 5f;
-    [SerializeField] public bool Jump = false;
+    [SerializeField] public float speed;
+    [SerializeField] public static bool Jump;
     public bool dirChange;
     public float jumpForce = 10;
     public float gravity = -20;
@@ -17,7 +17,7 @@ public class PlayerController : MonoBehaviour
     public Clock clock;
     private Vector3 startPosition;
     public DialogueUI dialogueUI;
-
+    public Animator animator;
     // variables to change the direction of the character
     public bool isFacingLeft;
     public bool isFacingRight;
@@ -33,6 +33,7 @@ public class PlayerController : MonoBehaviour
       facingRight = new Quaternion(transform.localRotation.x, transform.localRotation.y, transform.localRotation.z, 1);
       isFacingLeft = false;
       isFacingRight = true;
+      animator = GetComponent<Animator>();
     }
 
     protected virtual void Flip()
@@ -57,7 +58,7 @@ public class PlayerController : MonoBehaviour
           direction.z = hInput * speed;
           bool isGrounded = Physics.CheckSphere(groundCheck.position, 0.2f, groundLayer);
           direction.y += gravity * Time.deltaTime;
-          
+          Jump = isGrounded;
 
           controller.Move(direction * Time.deltaTime);
           Vector3 dir = direction * Time.deltaTime;
@@ -76,23 +77,20 @@ public class PlayerController : MonoBehaviour
 
           if (isGrounded)
           {
-              //Debug.Log("grounded");
-              if (Input.GetButtonDown("Jump"))
-              direction.y = jumpForce;
+              Debug.Log("grounded");
 
               if (Input.GetButtonDown("Jump"))
               {
                   direction.y = jumpForce;
+                  animator.SetBool("Jump", false);
               }
               // animator.SetFloat("speed", Mathf.Abs(direction.z));
               // Debug.Log(direction.z);
-              // animator.SetBool("Jump", false);
           }
           if (!isGrounded)
           {
-              //Debug.Log("Not grounded");
-              // animator.SetBool("Jump", true);
-
+              Debug.Log("Not grounded");
+              animator.SetBool("Jump", true);
           }
 
         }
