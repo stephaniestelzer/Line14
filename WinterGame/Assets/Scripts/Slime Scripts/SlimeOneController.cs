@@ -152,7 +152,7 @@ class SlimeOneController : SlimeBase
         }
         if (other.gameObject.CompareTag("icicle")) {
             source.PlayOneShot(source.clip);
-            BossEventHandle.DeductHealth(2);
+            BossEventHandle.DeductHealth(5);
         }
 
     }

@@ -18,6 +18,8 @@ public class PlayerController : MonoBehaviour
     private Vector3 startPosition;
     public DialogueUI dialogueUI;
     public Animator animator;
+    private float timeManager;
+    private bool timeout;
     // variables to change the direction of the character
 
     public bool isFacingLeft;
@@ -35,6 +37,8 @@ public class PlayerController : MonoBehaviour
       isFacingLeft = false;
       isFacingRight = true;
       animator = GetComponent<Animator>();
+      timeManager = 3f;
+      timeout = false;
     }
 
     protected virtual void Flip()
@@ -56,7 +60,10 @@ public class PlayerController : MonoBehaviour
         {
           float hInput = Input.GetAxis("Horizontal");
           direction.z = hInput * speed;
-          bool isGrounded = Physics.CheckSphere(groundCheck.position, 0.2f, groundLayer);
+          bool isGrounded = true;
+          if(!timeout){
+            isGrounded = Physics.CheckSphere(groundCheck.position, 0.2f, groundLayer);
+          }
           direction.y += gravity * Time.deltaTime;
           
           controller.Move(direction * Time.deltaTime);
@@ -82,13 +89,24 @@ public class PlayerController : MonoBehaviour
               if (Input.GetButtonDown("Jump"))
               {
                   direction.y = jumpForce;
+                  timeManager = 3f;
               }
               // Debug.Log(direction.z);
               animator.SetBool("Jump", false);
+              timeout = false;
           }
           if (!isGrounded)
           {
+            //timeout
+            timeManager -= Time.deltaTime;
+            if(timeManager <= 0){
+              Debug.Log("Less than!!!");
+              //animator.SetBool("Jump", false);
+              isGrounded = true;
+              timeout = true;
+            }
               Debug.Log("Not grounded");
+              Debug.Log(timeManager);
               animator.SetBool("Jump", true);
               // animator.SetBool("Jump", true);
           }

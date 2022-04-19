@@ -7,11 +7,13 @@ public class SlimeBBehavior : MonoBehaviour
     Rigidbody rb;
     float timeManager;
     Vector3 force;
+    bool canCollide;
     void Start()
     {
         rb = GetComponent<Rigidbody>();
         timeManager = 2;
-        force = new Vector3(3,5,0);
+        force = new Vector3(3,8,0);
+        canCollide = true;
     }
 
     // Update is called once per frame
@@ -23,7 +25,8 @@ public class SlimeBBehavior : MonoBehaviour
         }
         else
         {
-            timeManager = 2;
+            canCollide = true;
+            timeManager = 1;
             int rnd = RandU.Rand(1);
             if(rnd == 1){
                 force.x *= -1;
@@ -43,6 +46,10 @@ public class SlimeBBehavior : MonoBehaviour
             Destroy(gameObject);
          }
       }
+        if (canCollide && other.gameObject.CompareTag("Player")) {
+            PlayerStats.Instance.TakeDamage(1, true);
+            canCollide = false;
+        }
     }
 
     private void OnTriggerEnter(Collider other)

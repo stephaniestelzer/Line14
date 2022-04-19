@@ -25,7 +25,7 @@ public class SlimeBase : MonoBehaviour
 
     //TO Change tuning variables:
     public float speed = 8;
-    public float jumpForce = 150f;
+    public float jumpForce = 200;
     public float forceLimit = 100;
     public Vector3 force;
     public float timing;
@@ -95,6 +95,7 @@ public class SlimeBase : MonoBehaviour
         }
 
         //Debug.Log(force.x);
+        force.y = 200f;
         rb.AddForce(force, ForceMode.Impulse);
     }
 
