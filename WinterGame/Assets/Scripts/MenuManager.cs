@@ -19,6 +19,7 @@ public class MenuManager : MonoBehaviour
 
         if(GEvents.current != null){
         GEvents.current.onDeathThree += onDeathThree;
+        GEvents.current.onWakeArea += onWakeArea;
         }
     }
 
@@ -26,13 +27,14 @@ public class MenuManager : MonoBehaviour
     bosslock = false;
   }
 
+  private void onWakeArea(){
+    bosslock = true;
+  }
+
 
     // Update is called once per frame
     void Update()
     {
-      if(!bosslock && bosshealth.activeSelf){
-        bosslock = true;
-      }
         if (Input.GetKeyDown(KeyCode.Escape) && !gameIsOver)
         {
           bool pauseIsActive = pauseMenu.activeSelf;
@@ -45,10 +47,14 @@ public class MenuManager : MonoBehaviour
             pauseMenu.SetActive(!pauseIsActive);
             if(pauseIsActive){
               Time.timeScale = 1.0f;
+              if(bosslock){
               bosshealth.SetActive(true);
+              }
             }else{
               Time.timeScale = 0.0f;
+              if(bosslock){
               bosshealth.SetActive(false);
+              }
             }
           }
       }

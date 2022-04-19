@@ -106,7 +106,7 @@ public class PlayerController : MonoBehaviour
               timeout = true;
             }
             // Debug.Log("Not grounded");
-            Debug.Log(timeManager);
+            //Debug.Log(timeManager);
             animator.SetBool("Jump", true);
             // animator.SetBool("Jump", true);
           }
