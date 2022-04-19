@@ -5853,6 +5853,11 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 438193797}
   m_CullTransparentMesh: 1
+--- !u!1 &445160655 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8361651329035236051, guid: bd9f7effd67364e448574014e79b0ac0, type: 3}
+  m_PrefabInstance: {fileID: 1295158924}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &453596337
 GameObject:
   m_ObjectHideFlags: 0
@@ -12066,7 +12071,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1151187571366177996, guid: d937eb5f835c1374392fd154c2e0bf41, type: 3}
       propertyPath: m_Enabled
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1151187571366177996, guid: d937eb5f835c1374392fd154c2e0bf41, type: 3}
       propertyPath: snowflakeManager
@@ -13037,7 +13042,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 299737172798375726, guid: 53363ab458d81493a82c06f2e9a3b058, type: 3}
       propertyPath: m_LocalScale.z
-      value: 16.506708
+      value: 18
       objectReference: {fileID: 0}
     - target: {fileID: 299737172798375726, guid: 53363ab458d81493a82c06f2e9a3b058, type: 3}
       propertyPath: m_LocalPosition.x
@@ -13049,7 +13054,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 299737172798375726, guid: 53363ab458d81493a82c06f2e9a3b058, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 292.3
+      value: 291.76
       objectReference: {fileID: 0}
     - target: {fileID: 299737172798375726, guid: 53363ab458d81493a82c06f2e9a3b058, type: 3}
       propertyPath: m_LocalRotation.w
@@ -16005,6 +16010,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: USETHIS
       objectReference: {fileID: 0}
+    - target: {fileID: 8704301690208903900, guid: bd9f7effd67364e448574014e79b0ac0, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 9169712813153790057, guid: bd9f7effd67364e448574014e79b0ac0, type: 3}
       propertyPath: m_RootOrder
       value: 14
@@ -18462,6 +18471,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: USETHIS (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 8704301690208903900, guid: bd9f7effd67364e448574014e79b0ac0, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 9169712813153790057, guid: bd9f7effd67364e448574014e79b0ac0, type: 3}
       propertyPath: m_RootOrder
       value: 15
@@ -20165,6 +20178,21 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 9169712813153790057, guid: bd9f7effd67364e448574014e79b0ac0, type: 3}
   m_PrefabInstance: {fileID: 1295158924}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1618615996
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 445160655}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f91e3d108040bf4478d08df982c7aca8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  min: 10
+  max: 20
+  poppi: {fileID: 904014251}
 --- !u!1 &1621924532
 GameObject:
   m_ObjectHideFlags: 0
@@ -21840,7 +21868,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1151187571366177996, guid: d937eb5f835c1374392fd154c2e0bf41, type: 3}
       propertyPath: m_Enabled
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1151187571366177996, guid: d937eb5f835c1374392fd154c2e0bf41, type: 3}
       propertyPath: snowflakeManager
@@ -22607,7 +22635,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8068908251058431770, guid: def01f485151744dbb13f8705a5638ef, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -14.4
+      value: 217.11
       objectReference: {fileID: 0}
     - target: {fileID: 8068908251058431770, guid: def01f485151744dbb13f8705a5638ef, type: 3}
       propertyPath: m_LocalRotation.w
@@ -25012,7 +25040,7 @@ PrefabInstance:
       objectReference: {fileID: 904014251}
     - target: {fileID: 1151187571366177996, guid: d937eb5f835c1374392fd154c2e0bf41, type: 3}
       propertyPath: m_Enabled
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1151187571366177996, guid: d937eb5f835c1374392fd154c2e0bf41, type: 3}
       propertyPath: projectile
