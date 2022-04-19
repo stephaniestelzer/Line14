@@ -59,7 +59,7 @@ public class DialogueUI : MonoBehaviour
             tutorial = false;
             gameObject.SetActive(false);
             if (win) {
-              menuManager.ToggleGameStatus(true);
+              menuManager.ToggleGameStatus();
             }
         }
     }
