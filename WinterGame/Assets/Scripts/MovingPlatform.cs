@@ -11,14 +11,20 @@ public class MovingPlatform : MonoBehaviour
     public GameObject poppi;
     BoxCollider bC;
     bool parent = false;
+    Transform oldParent;
 
     void Start()
     {
         bC = gameObject.GetComponent<BoxCollider>();
+        if (poppi.transform.parent != null)
+            oldParent = poppi.transform.parent;
+        else
+            oldParent = null;
     }
 
     void FixedUpdate()
     {
+        /*
         if ((poppi.transform.position.z >= (bC.bounds.min.z - 1)) && (poppi.transform.position.z <= (bC.bounds.max.z + 1)))
         {
             poppi.transform.SetParent(transform);
@@ -27,9 +33,10 @@ public class MovingPlatform : MonoBehaviour
         else if (parent)
         {
             Debug.Log("CHECK");
-            poppi.transform.SetParent(null);
+            poppi.transform.SetParent(oldParent);
             parent = false;
         }
+        */
 
         if (!up)
         {
