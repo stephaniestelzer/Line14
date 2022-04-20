@@ -17,6 +17,7 @@ public class PlayerController : MonoBehaviour
     public Clock clock;
     private Vector3 startPosition;
     public DialogueUI dialogueUI;
+    public DialogueUI endDialogue;
     public Animator animator;
     private float timeManager;
     private bool timeout;
@@ -54,9 +55,9 @@ public class PlayerController : MonoBehaviour
     }
     // Update is called once per frame
     void Update()
-    {      
+    {
         // Debug.Log(isFacingLeft);
-        if (!menuManager.GetGameStatus() && !clock.paused && !dialogueUI.tutorial)
+        if (!menuManager.GetGameStatus() && !clock.paused && !dialogueUI.tutorial && !endDialogue.tutorial)
         {
           float hInput = Input.GetAxis("Horizontal");
           direction.z = hInput * speed;
@@ -65,7 +66,7 @@ public class PlayerController : MonoBehaviour
             isGrounded = Physics.CheckSphere(groundCheck.position, 0.2f, groundLayer);
           }
           direction.y += gravity * Time.deltaTime;
-          
+
           controller.Move(direction * Time.deltaTime);
           Vector3 dir = direction * Time.deltaTime;
           //Debug.Log(Mathf.Abs(dir.z));

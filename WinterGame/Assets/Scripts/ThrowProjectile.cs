@@ -14,12 +14,13 @@ public class ThrowProjectile : MonoBehaviour
     public MenuManager menuManager;
     public Clock clock;
     public DialogueUI dialogueUI;
+    public DialogueUI endDialogue;
 
-    [SerializeField] 
-    public float throwSpeed = 0.5f;   
+    [SerializeField]
+    public float throwSpeed = 0.5f;
     bool cooldown;
     void Start() {
-        cooldown = true;    
+        cooldown = true;
     }
     // Update is called once per frame
     void Update()
@@ -27,14 +28,14 @@ public class ThrowProjectile : MonoBehaviour
         Vector3 spawnlocation = transform.position;
         spawnlocation.y += penguinThrowHeight;
 
-        if (!menuManager.GetGameStatus() && !clock.paused && !dialogueUI.tutorial)
+        if (!menuManager.GetGameStatus() && !clock.paused && !dialogueUI.tutorial && !endDialogue.tutorial)
         {
           if (Input.GetMouseButtonDown(0) && cooldown) { // Left mouse button pressed during frame
               // Play sound
               source.PlayOneShot(snowballSound);
               // Create snowball
               Instantiate(snowballToSpawn, spawnlocation, Quaternion.identity);
-              // call cooldown function 
+              // call cooldown function
               StartCoroutine(ExampleCoroutine());
           }
 
@@ -54,15 +55,15 @@ public class ThrowProjectile : MonoBehaviour
     {
         cooldown = false;
         //Print the time of when the function is first called.
-        Debug.Log("Cooldown started : " + Time.time);
+        //Debug.Log("Cooldown started : " + Time.time);
 
         //yield on a new YieldInstruction that waits for 5 seconds.
         yield return new WaitForSeconds(throwSpeed);
 
-        //make ability available after cooldown 
+        //make ability available after cooldown
         cooldown = true;
 
         //After we have waited 5 seconds print the time again.
-        Debug.Log("Cooldown ended : " + Time.time);
+        //Debug.Log("Cooldown ended : " + Time.time);
     }
 }

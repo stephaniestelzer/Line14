@@ -12,6 +12,8 @@ public class SnowflakeManager : MonoBehaviour
     public TextMeshProUGUI iciclesText;
     public static int icicles;
     public static AudioSource source;
+    private static bool threeHundred;
+    private static bool sixHundred;
 
     // Start is called before the first frame update
     void Start()
@@ -19,6 +21,8 @@ public class SnowflakeManager : MonoBehaviour
       snowflakes = 0;
       icicles = 0;
         source = gameObject.GetComponent<AudioSource>();
+        threeHundred = false;
+        sixHundred = false;
     }
 
     // Update is called once per frame
@@ -36,11 +40,19 @@ public class SnowflakeManager : MonoBehaviour
     public static void changeSnow(int num) //connect this to gameplay later
     {
       snowflakes += num;
-      if(snowflakes == 300){
-        TemperatureManager.changeTemp(-15);
+      if (!threeHundred)
+      {
+        if(snowflakes >= 300){
+          TemperatureManager.changeTemp(-15);
+          threeHundred = true;
+        }
       }
-      if(snowflakes == 600){
-        TemperatureManager.changeTemp(-15);
+      if (!sixHundred)
+      {
+        if(snowflakes >= 600){
+          TemperatureManager.changeTemp(-15);
+          sixHundred = true;
+        }
       }
     }
 

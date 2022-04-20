@@ -11,6 +11,9 @@ public class DialogueUI : MonoBehaviour
     public bool tutorial;
     public MenuManager menuManager;
     public bool win;
+    public GameObject gameOver;
+    public GameObject gameWin;
+    public Clock clock;
     void Start() {
         textComponent.text = string.Empty;
         StartDialogue();
@@ -59,7 +62,11 @@ public class DialogueUI : MonoBehaviour
             tutorial = false;
             gameObject.SetActive(false);
             if (win) {
+              tutorial = true;
               menuManager.ToggleGameStatus();
+              clock.pause();
+              gameOver.SetActive(true);
+              gameWin.SetActive(true);
             }
         }
     }

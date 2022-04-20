@@ -25,6 +25,7 @@ public class TemperatureManager : MonoBehaviour
     public static void changeTemp(int num) //connect this to gameplay later
     {
       temperature += num;
+      Debug.Log(temperature);
     }
 
     public void ResetTemperature()

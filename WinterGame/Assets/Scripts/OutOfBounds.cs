@@ -26,8 +26,8 @@ public class OutOfBounds : MonoBehaviour
     void Update()
     {
         //cannot progress backwards
-        if(checkpoint < 4 && player.transform.position.z > 692){
-            lastCheckP = new Vector3(0f,9f,692f);
+        if(checkpoint < 4 && player.transform.position.z > 677){
+            lastCheckP = new Vector3(0f,9f,677f);
             checkpoint = 4;
             Debug.Log("Boss defeated");
             winDialogue.SetActive(true);
