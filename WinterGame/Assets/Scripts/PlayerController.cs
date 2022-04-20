@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
+    Rigidbody rb;
     public CharacterController controller;
     private Vector3 direction;
     [SerializeField] public float speed;
@@ -31,6 +32,12 @@ public class PlayerController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+      // vvvv attempt at keeping the character centered vvvv
+      rb = controller.gameObject.GetComponent<Rigidbody>();
+      rb.centerOfMass = Vector3.zero;
+      rb.inertiaTensorRotation = Quaternion.identity;
+      // ^^^^ attempt at keeping the character centered ^^^^
+      
       startPosition = new Vector3(0f, 9.5f, -11f);
       controller = GetComponent<CharacterController>();
       facingLeft = new Quaternion(transform.localRotation.x, (transform.localRotation.y + 180), transform.localRotation.z, 1);
