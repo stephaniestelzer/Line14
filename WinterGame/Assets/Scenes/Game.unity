@@ -5815,6 +5815,8 @@ MonoBehaviour:
   - Thank you for playing Popsicle's Polar Dash, a game by Line 14.
   textSpeed: 0.05
   tutorial: 0
+  menuManager: {fileID: 0}
+  win: 0
 --- !u!114 &438193800
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -20297,6 +20299,8 @@ MonoBehaviour:
     lair! Traverse the obstacles to get to boss! Good luck!
   textSpeed: 0.05
   tutorial: 0
+  menuManager: {fileID: 0}
+  win: 0
 --- !u!1001 &1629271788
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -27595,7 +27599,6 @@ MonoBehaviour:
   player: {fileID: 904014251}
   controller: {fileID: 0}
   winDialogue: {fileID: 0}
-  menuManager: {fileID: 0}
 --- !u!1 &2093154975
 GameObject:
   m_ObjectHideFlags: 0
