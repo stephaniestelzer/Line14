@@ -11,10 +11,12 @@ public class HorizontalMovingPlatform : MonoBehaviour
     public GameObject poppi;
     BoxCollider bC;
     bool parent = false;
+    Transform oldParent;
 
     void Start()
     {
         bC = gameObject.GetComponent<BoxCollider>();
+        oldParent = poppi.transform.parent;
     }
 
     void FixedUpdate()
@@ -26,8 +28,8 @@ public class HorizontalMovingPlatform : MonoBehaviour
         }
         else if (parent)
         {
-            Debug.Log("CHECK");
-            poppi.transform.SetParent(null);
+            //Debug.Log("CHECK");
+            poppi.transform.SetParent(oldParent);
             parent = false;
         }
 

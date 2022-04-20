@@ -12495,7 +12495,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1151187571366177996, guid: d937eb5f835c1374392fd154c2e0bf41, type: 3}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1151187571366177996, guid: d937eb5f835c1374392fd154c2e0bf41, type: 3}
       propertyPath: snowflakeManager
@@ -27264,7 +27264,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1151187571366177996, guid: d937eb5f835c1374392fd154c2e0bf41, type: 3}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1151187571366177996, guid: d937eb5f835c1374392fd154c2e0bf41, type: 3}
       propertyPath: snowflakeManager
@@ -30789,7 +30789,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8704301690208903900, guid: bd9f7effd67364e448574014e79b0ac0, type: 3}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 9169712813153790057, guid: bd9f7effd67364e448574014e79b0ac0, type: 3}
       propertyPath: m_RootOrder
