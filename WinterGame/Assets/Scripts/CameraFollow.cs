@@ -9,6 +9,14 @@ public class CameraFollow : MonoBehaviour
 
     Vector3 offset;
 
+    public GameObject player;
+
+    public float target = 0.0f;
+
+    public float zoomSpeed = 2f;
+
+    public float zOff = 6f;
+
     bool shaking = false;
     Vector3 movement1 = new Vector3(0, 0.05f, 0.05f);
     Vector3 movement2 = new Vector3(0, -0.05f, -0.05f);
@@ -24,6 +32,14 @@ public class CameraFollow : MonoBehaviour
 
     private void LateUpdate()
     {
+
+        if(player.transform.position.z >= 578)
+        {
+            //offset = new Vector3(14f, 6f, 0);
+            Debug.Log("final boss");
+            zOff = Mathf.MoveTowards(zOff, target, zoomSpeed * Time.deltaTime);
+            offset = new Vector3(14f, 6f, zOff);
+        }
         transform.position = Target.position + offset;
 
         if (shaking) {
