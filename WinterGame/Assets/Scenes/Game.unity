@@ -12934,6 +12934,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Target: {fileID: 519536030}
+  player: {fileID: 904014251}
+  target: 0
+  zoomSpeed: 2
+  zOff: 6
   speed: 15
 --- !u!114 &963194230
 MonoBehaviour:
