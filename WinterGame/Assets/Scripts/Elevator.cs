@@ -9,9 +9,28 @@ public class Elevator : MonoBehaviour
     public int max;
     float speed = 1f;
     public GameObject poppi;
+    BoxCollider bC;
+    bool parent = false;
+
+    void Start() {
+        bC = gameObject.GetComponent<BoxCollider>();
+    }
 
     void FixedUpdate()
     {
+        if ((poppi.transform.position.z >= (bC.bounds.min.z - 1)) && (poppi.transform.position.z <= (bC.bounds.max.z + 1)))
+        {
+            //Debug.Log("YAAYY");
+            poppi.transform.SetParent(transform);
+            parent = true;
+        }
+        else if (parent)
+        {
+            Debug.Log("CHECK");
+            poppi.transform.SetParent(null);
+            parent = false;
+        }
+
         if (!up)
         {
             if (transform.position.y >= min)

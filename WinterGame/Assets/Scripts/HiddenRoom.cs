@@ -11,7 +11,7 @@ public class HiddenRoom : MonoBehaviour//Modelled after OnCollision
         {
             if(poppi.position.y < 10)
             {
-                Debug.Log("Room Unlocked");
+                //Debug.Log("Room Unlocked");
                 Destroy(gameObject);
             }
         }

@@ -16,6 +16,7 @@ public class Slide : MonoBehaviour
     float tiltAngle = -60.0f;
     bool isSlope = false;
     bool fix = true;
+    //bool go = false;
 
     //Automatic "Slide"
     public float speed;
@@ -30,7 +31,7 @@ public class Slide : MonoBehaviour
             if (transform.position.z >= ((a.bounds.min.z) - 1))
             {
                 slopePos = a.bounds.min.z;
-                slopeWidth = a.bounds.max.z;
+                slopeWidth = a.bounds.max.z + 1;
                 ret = true;
             }
         }
@@ -48,6 +49,7 @@ public class Slide : MonoBehaviour
 
         if (isSlope)
         {
+            //go = true;
             if (transform.position.z <= slopeWidth)
             {
                 //Debug.Log("bye bye");
@@ -57,40 +59,20 @@ public class Slide : MonoBehaviour
                 cc.enabled = false;
                 this.GetComponent<PlayerController>().enabled = false;
                 this.GetComponent<Animator>().enabled = false;
-                //
                 if (fix)
                 {
                     transform.position += new Vector3(0, 1.5f, 0);
                     fix = false;
                 }
                 transform.Translate(new Vector3(0, -10, 10) * Time.deltaTime, Space.World);
-                /*if (!posFix)
-                {
-                    Debug.Log("FIIIIX");
-                    transform.position = transform.position + new Vector3(0, 3, 0);
-                    posFix = true;
-                }*/
-
             }
             else if (transform.position.z > slopeWidth)
             {
-                // Quaternion newQuaternion = new Quaternion();
-                // newQuaternion.Set(0, 0, 0, 1);
-                // transform.localRotation = current;
-                // cc.enabled = true;
-                this.GetComponent<CharacterController>().enabled = true;
+                transform.rotation = Quaternion.identity;
+                cc.enabled = true;
                 this.GetComponent<PlayerController>().enabled = true;
                 this.GetComponent<Animator>().enabled = true;
-                /*
-                if (posFix)
-                {
-                    transform.position = transform.position + new Vector3(0, -3, 0);
-                    posFix = false;
-                } 
-                */
             }
         }
-        
-        
     }
 }
