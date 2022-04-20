@@ -170,7 +170,7 @@ RectTransform:
   - {fileID: 793065228}
   - {fileID: 575194239}
   m_Father: {fileID: 1102823845}
-  m_RootOrder: 5
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
@@ -505,7 +505,7 @@ RectTransform:
   - {fileID: 671234826}
   - {fileID: 334647876}
   m_Father: {fileID: 1102823845}
-  m_RootOrder: 8
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -5464,7 +5464,7 @@ RectTransform:
   - {fileID: 1775639891}
   - {fileID: 89717397}
   m_Father: {fileID: 1102823845}
-  m_RootOrder: 7
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
@@ -5787,7 +5787,7 @@ RectTransform:
   m_Children:
   - {fileID: 1477848421}
   m_Father: {fileID: 1102823845}
-  m_RootOrder: 9
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
@@ -5815,8 +5815,11 @@ MonoBehaviour:
   - Thank you for playing Popsicle's Polar Dash, a game by Line 14.
   textSpeed: 0.05
   tutorial: 0
-  menuManager: {fileID: 0}
-  win: 0
+  menuManager: {fileID: 1102823846}
+  win: 1
+  gameOver: {fileID: 16659699}
+  gameWin: {fileID: 334647875}
+  clock: {fileID: 1102823841}
 --- !u!114 &438193800
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8825,7 +8828,7 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 671234825}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -8836,7 +8839,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -79}
+  m_AnchoredPosition: {x: -0.000061035156, y: -78.999985}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &680616372
@@ -9830,7 +9833,7 @@ RectTransform:
   - {fileID: 527565858}
   - {fileID: 140160221}
   m_Father: {fileID: 1102823845}
-  m_RootOrder: 6
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
@@ -13804,11 +13807,11 @@ RectTransform:
   - {fileID: 1137740080}
   - {fileID: 1728337975}
   - {fileID: 1621924533}
+  - {fileID: 438193798}
   - {fileID: 6079243}
   - {fileID: 768251170}
   - {fileID: 411245943}
   - {fileID: 16659700}
-  - {fileID: 438193798}
   m_Father: {fileID: 0}
   m_RootOrder: 31
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: -2.6}
@@ -17225,7 +17228,7 @@ MonoBehaviour:
     m_NormalColor: {r: 0.49803922, g: 0.7058824, b: 0.8666667, a: 0}
     m_HighlightedColor: {r: 0.49803922, g: 0.7058824, b: 0.8666667, a: 1}
     m_PressedColor: {r: 0.49803922, g: 0.7058824, b: 0.8666667, a: 0.53333336}
-    m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_SelectedColor: {r: 0.49803922, g: 0.7058824, b: 0.8666667, a: 0.56078434}
     m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
@@ -18894,10 +18897,10 @@ RectTransform:
   m_Father: {fileID: 334647876}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 22, y: 328.6771}
-  m_SizeDelta: {x: 277.452, y: -10.286011}
+  m_AnchorMin: {x: 0.5, y: 1}
+  m_AnchorMax: {x: 0.5, y: 1}
+  m_AnchoredPosition: {x: 22, y: 278.6771}
+  m_SizeDelta: {x: 377.452, y: 89.71399}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1541036108
 MonoBehaviour:
@@ -18919,10 +18922,10 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: You Won!
+  m_text: YOU WON!
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 5f1e4816c6e39495ea6810b625bbc545, type: 2}
-  m_sharedMaterial: {fileID: -5805512921040028473, guid: 5f1e4816c6e39495ea6810b625bbc545, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: d4a244335e32a46f78feb98c9bf2a2ef, type: 2}
+  m_sharedMaterial: {fileID: -7460740404967841289, guid: d4a244335e32a46f78feb98c9bf2a2ef, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -18946,8 +18949,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 80
-  m_fontSizeBase: 80
+  m_fontSize: 50
+  m_fontSizeBase: 50
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -19926,7 +19929,7 @@ MonoBehaviour:
     m_SelectOnRight: {fileID: 0}
   m_Transition: 1
   m_Colors:
-    m_NormalColor: {r: 0.49803922, g: 0.7058824, b: 0.8666667, a: 0}
+    m_NormalColor: {r: 0.49803922, g: 0.7058824, b: 0.8666667, a: 1}
     m_HighlightedColor: {r: 0.49803922, g: 0.7058824, b: 0.8666667, a: 1}
     m_PressedColor: {r: 0.49803922, g: 0.7058824, b: 0.8666667, a: 0.53333336}
     m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
@@ -20301,6 +20304,9 @@ MonoBehaviour:
   tutorial: 0
   menuManager: {fileID: 0}
   win: 0
+  gameOver: {fileID: 0}
+  gameWin: {fileID: 0}
+  clock: {fileID: 1102823841}
 --- !u!1001 &1629271788
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -22610,6 +22616,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1621924536}
     - target: {fileID: 8068908251058431768, guid: def01f485151744dbb13f8705a5638ef, type: 3}
+      propertyPath: endDialogue
+      value: 
+      objectReference: {fileID: 438193799}
+    - target: {fileID: 8068908251058431768, guid: def01f485151744dbb13f8705a5638ef, type: 3}
       propertyPath: menuManager
       value: 
       objectReference: {fileID: 1102823846}
@@ -22639,7 +22649,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8068908251058431770, guid: def01f485151744dbb13f8705a5638ef, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -13
+      value: -14.35
       objectReference: {fileID: 0}
     - target: {fileID: 8068908251058431770, guid: def01f485151744dbb13f8705a5638ef, type: 3}
       propertyPath: m_LocalRotation.w
@@ -22683,8 +22693,12 @@ PrefabInstance:
       objectReference: {fileID: 1621924536}
     - target: {fileID: 8068908251058431775, guid: def01f485151744dbb13f8705a5638ef, type: 3}
       propertyPath: throwSpeed
-      value: 0.4
+      value: 0.6
       objectReference: {fileID: 0}
+    - target: {fileID: 8068908251058431775, guid: def01f485151744dbb13f8705a5638ef, type: 3}
+      propertyPath: endDialogue
+      value: 
+      objectReference: {fileID: 438193799}
     - target: {fileID: 8068908251058431775, guid: def01f485151744dbb13f8705a5638ef, type: 3}
       propertyPath: menuManager
       value: 
@@ -27598,7 +27612,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 904014251}
   controller: {fileID: 0}
-  winDialogue: {fileID: 0}
+  winDialogue: {fileID: 438193797}
 --- !u!1 &2093154975
 GameObject:
   m_ObjectHideFlags: 0
