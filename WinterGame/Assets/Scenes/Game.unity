@@ -12878,8 +12878,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fd46a8220625fe94e85651b63a12aefd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 0}
-  camera: {fileID: 0}
+  player: {fileID: 904014251}
+  camera: {fileID: 963194227}
   target: 100
   zoomSpeed: 10
 --- !u!1 &967549881
