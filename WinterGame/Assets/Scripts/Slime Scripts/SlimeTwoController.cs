@@ -115,8 +115,8 @@ class SlimeTwoController : SlimeBase
             scalefull.z = scalefull.z -0.1f;
         }
         if (other.gameObject.CompareTag("icicle")) {
-            BossEventHandle.DeductHealth(selfHealth);
-            selfHealth -= selfHealth; //hardcoded
+            BossEventHandle.DeductHealth(6);
+            selfHealth -= 6; //hardcoded
             source.PlayOneShot(source.clip);
             scalefull.x = scalefull.x -0.2f;
             scalefull.y = scalefull.y -0.2f;
