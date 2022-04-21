@@ -61,9 +61,9 @@ public class SlimeThreeController : SlimeBase
             BossEventHandle.DeductHealth(1);
         }
         if (other.gameObject.CompareTag("icicle")) {
+            BossEventHandle.DeductHealth(selfHealth);
             selfHealth -= 3; //hardcoded
             source.PlayOneShot(source.clip);
-            BossEventHandle.DeductHealth(selfHealth);
         }
         if (canCollide && other.gameObject.CompareTag("Player")) {
             PlayerStats.Instance.TakeDamage(1, true);
