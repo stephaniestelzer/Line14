@@ -15,6 +15,8 @@ public class SnowflakeManager : MonoBehaviour
     private static bool threeHundred;
     private static bool sixHundred;
 
+    private static int numMoreForIcicle;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -23,6 +25,7 @@ public class SnowflakeManager : MonoBehaviour
         source = gameObject.GetComponent<AudioSource>();
         threeHundred = false;
         sixHundred = false;
+        numMoreForIcicle = 3;
     }
 
     // Update is called once per frame
@@ -35,6 +38,16 @@ public class SnowflakeManager : MonoBehaviour
 
     public static void playPickupSound() {
         source.PlayOneShot(source.clip);
+    }
+
+    // Returns true if new icicle is produced
+    public static bool updateIcicleProgress() {
+        numMoreForIcicle--;
+        if (numMoreForIcicle == 0) {
+            numMoreForIcicle = 3;
+            return true;
+        }
+        return false;
     }
 
     public static void changeSnow(int num) //connect this to gameplay later

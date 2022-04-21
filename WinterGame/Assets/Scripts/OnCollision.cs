@@ -11,15 +11,14 @@ public class OnCollision : MonoBehaviour
         if(other.CompareTag("Player")){
             SnowflakeManager.changeSnow(numSnowflakesPerPowerup);
             SnowflakeManager.playPickupSound();
-            Destroy(gameObject);
-            Debug.Log("collision");
-            // Give player a new icicle (added by Natalie)
-            if (SnowflakeManager.snowflakes % (numSnowflakesPerPowerup * 3) == 0) { // Every 3 snowflakes collected
-                Inventory.numIcicles++;
 
+            // Give player a new icicle (added by Natalie)
+            if (SnowflakeManager.updateIcicleProgress()) {
+                Inventory.numIcicles++;
                 //Update the UI (added by Andrea)
                 SnowflakeManager.AddIcicle();
             }
+            Destroy(gameObject);
         }
     }
 }

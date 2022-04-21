@@ -113,6 +113,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   numSnowflakesPerPowerup: 50
+  numMoreForIcicle: 3
 --- !u!114 &6444187017989812206
 MonoBehaviour:
   m_ObjectHideFlags: 0
