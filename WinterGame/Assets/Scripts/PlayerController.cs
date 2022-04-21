@@ -29,9 +29,13 @@ public class PlayerController : MonoBehaviour
 
     public static Quaternion facingLeft;
     public static Quaternion facingRight;
+
+    private Vector3 centered;
     // Start is called before the first frame update
     void Start()
     {
+      centered = transform.position;
+
       // vvvv attempt at keeping the character centered vvvv
       rb = controller.gameObject.GetComponent<Rigidbody>();
       rb.centerOfMass = Vector3.zero;
@@ -63,9 +67,15 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
         // Debug.Log(isFacingLeft);
         if (!menuManager.GetGameStatus() && !clock.paused && !dialogueUI.tutorial && !endDialogue.tutorial)
         {
+        centered = transform.position;
+        centered.x = 0;
+        controller.enabled = false;
+        transform.position = centered;
+        controller.enabled = true;
           float hInput = Input.GetAxis("Horizontal");
           direction.z = hInput * speed;
           bool isGrounded = true;
